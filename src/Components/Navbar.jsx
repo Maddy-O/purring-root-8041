@@ -26,11 +26,14 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import logoHomePage from "../Utils/logoHomePage.png";
+import { FaUser, FaRegCopy, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
 
 export default function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
+  // get this using useSelector
   const [isAuth, setIsAuth] = useState(false);
+  // get city also from home page and show in drawer
   return (
     <>
       <Box bg={"black"} color={"white"} px={4}>
@@ -40,16 +43,61 @@ export default function Navbar() {
               <HamburgerIcon w={6} h={5} color="white.500" onClick={onOpen}>
                 Open
               </HamburgerIcon>
-              <Drawer placement="left" onClose={onClose} isOpen={isOpen}>
+              <Drawer
+                placement="left"
+                onClose={onClose}
+                isOpen={isOpen}
+                size="sm"
+              >
                 <DrawerOverlay />
                 <DrawerContent bg={"white"} color={"gray.700"}>
-                  <DrawerHeader borderBottomWidth="1px">
-                    Login or Signup
+                  <DrawerHeader borderBottomWidth="1px" bg={"gray.300"}>
+                    {isAuth ? (
+                      <Flex alignItems={"center"} gap="10px">
+                        <FaUser size={"18px"} />
+                        <Text fontSize="16px">Login or Signup</Text>
+                      </Flex>
+                    ) : (
+                      <Flex alignItems={"center"} gap="10px">
+                        <FaUser size={"18px"} />
+                        <Text fontSize="16px">Username</Text>
+                      </Flex>
+                    )}
                   </DrawerHeader>
                   <DrawerBody>
-                    <p>Some contents...</p>
-                    <p>Some contents...</p>
-                    <p>Some contents...</p>
+                    <Flex
+                      alignItems={"center"}
+                      height={"50px"}
+                      justifyContent="space-between"
+                    >
+                      <Flex alignItems={"center"} gap="10px" height={"50px"}>
+                        <FaMapMarkerAlt size={"22"} />
+                        <Text fontSize="16px">Change City</Text>
+                      </Flex>
+                      <Text
+                        fontWeight={"600"}
+                        fontSize="16px"
+                        color={"green.500"}
+                      >
+                        Delhi NCR
+                      </Text>
+                    </Flex>
+                    <Flex alignItems={"center"} gap="10px" height={"50px"}>
+                      <FaRegCopy size={"22"} />
+                      <Text fontSize="16px">
+                        Zoomcar Fleet Vehicles Policies
+                      </Text>
+                    </Flex>
+                    <Flex alignItems={"center"} gap="10px" height={"50px"}>
+                      <FaRegCopy size={"22"} />
+                      <Text fontSize="16px">
+                        Zoomcar Host Vehicles Policies
+                      </Text>
+                    </Flex>
+                    <Flex alignItems={"center"} gap="10px" height={"50px"}>
+                      <FaPhone size={"22"} />
+                      <Text fontSize="16px">Help & Support</Text>
+                    </Flex>
                   </DrawerBody>
                 </DrawerContent>
               </Drawer>
@@ -57,7 +105,11 @@ export default function Navbar() {
             <Image src={logoHomePage} />
           </Flex>
 
-          <Flex alignItems={"center"} justifyContent={"space-between"}>
+          <Flex
+            alignItems={"center"}
+            justifyContent={"space-between"}
+            marginRight={"50px"}
+          >
             <Stack direction={"row"} spacing={250}>
               <Text fontWeight={"600"} fontSize="18px">
                 Become a Host
@@ -79,10 +131,9 @@ export default function Navbar() {
                       ZMS
                     </Text>
                   ) : (
-                    <Avatar
-                      size={"sm"}
-                      src={"https://avatars.dicebear.com/api/male/username.svg"}
-                    />
+                    <Text fontWeight={"700"} fontSize="20px">
+                      Username
+                    </Text>
                   )}
                 </MenuButton>
                 <MenuList alignItems={"center"}>
