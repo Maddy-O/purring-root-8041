@@ -1,7 +1,7 @@
 import React from 'react'
 import {Route,Routes} from "react-router-dom";
 import { CheckoutPage } from '../Pages/CheckoutPage';
-import FilterPage from '../Pages/FilterPage';
+import {FilterPage} from '../Pages/FilterPage';
 
 export const MainRoutes = () => {
   return (
