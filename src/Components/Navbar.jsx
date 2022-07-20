@@ -106,56 +106,54 @@ export default function Navbar() {
           </Flex>
 
           <Flex
+            minWidth={"350px"}
             alignItems={"center"}
             justifyContent={"space-between"}
-            marginRight={"50px"}
+            direction={"row"}
           >
-            <Stack direction={"row"} spacing={250}>
-              <Text fontWeight={"600"} fontSize="18px">
-                Become a Host
-              </Text>
-              <Text fontWeight={"600"} fontSize="18px">
-                ZMS
-              </Text>
-
-              <Menu>
-                <MenuButton
-                  as={Button}
-                  rounded={"full"}
-                  variant={"link"}
-                  cursor={"pointer"}
-                  minW={0}
-                >
-                  {isAuth ? (
-                    <Text fontWeight={"700"} fontSize="20px">
-                      ZMS
-                    </Text>
-                  ) : (
-                    <Text fontWeight={"700"} fontSize="20px">
-                      Username
-                    </Text>
-                  )}
-                </MenuButton>
-                <MenuList alignItems={"center"}>
-                  <br />
-                  <Center>
-                    <Avatar
-                      size={"2xl"}
-                      src={"https://avatars.dicebear.com/api/male/username.svg"}
-                    />
-                  </Center>
-                  <br />
-                  <Center>
-                    <p>Username</p>
-                  </Center>
-                  <br />
-                  <MenuDivider />
-                  <MenuItem>Your Servers</MenuItem>
-                  <MenuItem>Account Settings</MenuItem>
-                  <MenuItem>Logout</MenuItem>
-                </MenuList>
-              </Menu>
-            </Stack>
+            <Text fontWeight={"600"} fontSize="18px">
+              Become a Host
+            </Text>
+            <Text fontWeight={"600"} fontSize="18px">
+              ZMS
+            </Text>
+            <Menu>
+              <MenuButton
+                as={Button}
+                rounded={"full"}
+                variant={"link"}
+                cursor={"pointer"}
+                minW={0}
+              >
+                {isAuth ? (
+                  <Text fontWeight={"700"} fontSize="20px">
+                    ZMS
+                  </Text>
+                ) : (
+                  <Text fontWeight={"700"} fontSize="20px">
+                    Username
+                  </Text>
+                )}
+              </MenuButton>
+              <MenuList alignItems={"center"}>
+                <br />
+                <Center>
+                  <Avatar
+                    size={"2xl"}
+                    src={"https://avatars.dicebear.com/api/male/username.svg"}
+                  />
+                </Center>
+                <br />
+                <Center>
+                  <p>Username</p>
+                </Center>
+                <br />
+                <MenuDivider />
+                <MenuItem>Your Servers</MenuItem>
+                <MenuItem>Account Settings</MenuItem>
+                <MenuItem>Logout</MenuItem>
+              </MenuList>
+            </Menu>
           </Flex>
         </Flex>
       </Box>
