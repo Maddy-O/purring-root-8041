@@ -6,30 +6,22 @@ const initState = {
   isError: false,
   filterData: [],
 };
-export const reducer = (state = initState, action) => {
-  switch (action.type) {
+
+const reducer = (state = initState, action) => {
+  const { type, payload } = action;
+  switch (type) {
     case Types.GET_CAR_REQUEST: {
-      return {
-        ...state,
-        isLoading: true,
-      };
+      return { ...state, isLoading: true, isError: false };
     }
-    case Types.GET_CAR_SUCESS: {
-      return {
-        ...state,
-        car: action.payload,
-        isLoading: false,
-      };
+    case Types.GET_CAR_SUCCESS: {
+      return { ...state, car: payload, isLoading: false, isError: false };
     }
     case Types.GET_CAR_FALIURE: {
-      return {
-        ...state,
-        isLoading: false,
-        isError: true,
-      };
+      return { ...state, isLoading: false, isError: true };
     }
-
     default:
       return state;
   }
 };
+
+export { reducer };

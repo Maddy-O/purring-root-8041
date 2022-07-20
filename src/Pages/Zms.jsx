@@ -4,7 +4,6 @@ import ZmsFooter from "../Components/ZmsFooter";
 import { Flex, Image } from "@chakra-ui/react";
 import Image1 from "../Assets/ImgImg.png";
 import ContactForm from "../Components/ContactForm";
-import RecordComponent from "../Components/RecordComponent";
 import Partner from "../Components/Partner";
 
 const Zms = () => {

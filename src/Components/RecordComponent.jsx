@@ -1,4 +1,4 @@
-import { Box, Text, VStack, Grid, GridItem } from "@chakra-ui/react";
+import { Box, Text, VStack, Grid } from "@chakra-ui/react";
 import React from "react";
 import RecordCard from "./RecordCard";
 
@@ -38,7 +38,7 @@ const recordData = [
 const RecordComponent = () => {
   return (
     <Box
-    marginTop='100px'
+      marginTop="100px"
       width="100%"
       bgImage="url('https://www.zoomcar.com/assets/component-images/rectangle.e2190cd211f285fb86e5c7809c0f7b42.jpg')"
     >
