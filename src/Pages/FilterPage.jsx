@@ -19,7 +19,7 @@ export const FilterPage = () => {
   };
   useEffect(() => {
     dispatch(getCar());
-  }, [dispatch, metaa]);
+  }, [data.length, dispatch, metaa]);
 
   // console.log(data);
   // console.log(metaa);
@@ -66,6 +66,7 @@ export const FilterPage = () => {
               lineHeight={"12px"}
               boxShadow={" rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;"}
               marginBottom={"2%"}
+              key={item.id}
             >
               {/* imagediv */}
               <Box
