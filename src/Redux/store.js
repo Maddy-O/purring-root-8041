@@ -4,11 +4,10 @@ import {
   compose,
   applyMiddleware,
 } from "redux";
-import { reducer as AppReducer } from "./reducer";
-import thunk from "redux-thunk";
 import { reducer as AppReducer } from "./AppReducer/reducer";
 import { reducer as AuthReducer } from "./AuthReducer/reducer";
 import { reducer as LocationReducer } from "./LocationReducer/reducer";
+import thunk from "redux-thunk";
 
 const composeEnhancers =
   typeof window === "object" && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
