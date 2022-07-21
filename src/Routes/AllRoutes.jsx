@@ -14,7 +14,7 @@ const AllRoutes = () => {
       <Route path="/location" element={<Location />} />
       <Route path="/pickup" element={<PickUpPage />} />
       <Route path="/filterpage" element={<FilterPage />}></Route>
-      <Route path="/checkoutpage" element={<CheckoutPage />}></Route>
+      <Route path="/filterpage/checkoutpage" element={<CheckoutPage />}></Route>
       <Route path="/zms" element={<Zms />}></Route>
     </Routes>
   );
