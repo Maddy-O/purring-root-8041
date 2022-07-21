@@ -77,7 +77,7 @@ export default function Navbar() {
                         <FaMapMarkerAlt size={"22"} />
                         <Text fontSize="16px">
                           <Link
-                            to={"/loc"}
+                            to={"/location"}
                             style={{
                               textDecoration: "none",
                               border: "none",

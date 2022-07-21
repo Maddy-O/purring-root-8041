@@ -14,7 +14,6 @@ const Zms = () => {
       <HeroBanner />
       <ProductOffering/>
       <Partner />
-
       <Flex
         width={{ base: "90%", lg: "80%" }}
         height="500px"
@@ -23,11 +22,8 @@ const Zms = () => {
       >
         <Image width="100%" height="100%" src={Image1} alt="demo" />
       </Flex>
-
       <RecordComponent />
-
       <ContactForm />
-
       <ZmsFooter />
     </div>
   );
