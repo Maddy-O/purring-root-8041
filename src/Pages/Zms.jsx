@@ -19,15 +19,14 @@ const Zms = () => {
         width={{ base: "90%", lg: "80%" }}
         height="500px"
         margin="auto"
-        marginTop='150px'
-      
+        marginTop="150px"
       >
         <Image width="100%" height="100%" src={Image1} alt="demo" />
       </Flex>
 
       <RecordComponent />
 
-      <ContactForm  />
+      <ContactForm />
 
       <ZmsFooter />
     </div>
