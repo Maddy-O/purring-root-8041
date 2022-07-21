@@ -3,7 +3,7 @@ import {
   Box,
   Flex,
   Avatar,
-  Link,
+  Link as RouterLink,
   Button,
   Menu,
   MenuButton,
@@ -112,7 +112,7 @@ export default function Navbar() {
             direction={"row"}
           >
             <Text fontWeight={"600"} fontSize="18px">
-              Become a Host
+          Become a Host
             </Text>
             <Text fontWeight={"600"} fontSize="18px">
               ZMS
@@ -127,11 +127,14 @@ export default function Navbar() {
               >
                 {isAuth ? (
                   <Text fontWeight={"700"} fontSize="20px">
-                    ZMS
+                    <RouterLink to="/Signup">
+                    Login / Signup</RouterLink>
                   </Text>
                 ) : (
                   <Text fontWeight={"700"} fontSize="20px">
+                      <RouterLink to="/Signup">
                     Username
+                         </RouterLink>
                   </Text>
                 )}
               </MenuButton>
