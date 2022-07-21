@@ -44,11 +44,41 @@ const addUserLocationFailure = (payload) => {
 };
 
 const addUserLocation = (payload) => (dispatch) => {
-  console.log(payload);
+  // console.log(payload);
   dispatch(addUserLocationRequest());
   axios
-    .post("http://localhost:8080/user-location", payload)
+    .patch(`http://localhost:8080/user-location/${1}`, payload)
     .then((response) => dispatch(addUserLocationSuccess(response.data)))
     .catch((response) => dispatch(addUserLocationFailure(response.data)));
 };
-export { getLocation, addUserLocation };
+
+//----------------------------Get User location------------------------
+const getUserLocationRequest = (payload) => {
+  return {
+    type: types.GET_USER_LOC_REQUEST,
+    payload,
+  };
+};
+const getUserLocationSuccess = (payload) => {
+  return {
+    type: types.GET_USER_LOC_SUCCESS,
+    payload,
+  };
+};
+const getUserLocationFailure = (payload) => {
+  return {
+    type: types.GET_USER_LOC_FAILURE,
+    payload,
+  };
+};
+
+const getUserLocation = (payload) => (dispatch) => {
+  // console.log(payload);
+  dispatch(getUserLocationRequest());
+  axios
+    .get("http://localhost:8080/user-location", payload)
+    .then((response) => dispatch(getUserLocationSuccess(response.data)))
+    .catch((response) => dispatch(getUserLocationFailure(response.data)));
+};
+
+export { getLocation, addUserLocation, getUserLocation };
