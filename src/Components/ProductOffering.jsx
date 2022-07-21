@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Text, Grid, GridItem, Button } from "@chakra-ui/react";
 import { useState } from "react";
-import ImageSlider from "./ImageSlider";
+// import ImageSlider from "./ImageSlider";
 import FeaturesCard from "./FeaturesCard";
 
 const solutionImage = [
@@ -68,11 +68,11 @@ const ProductOffering = () => {
           {features ? "All-in-one solution to reduce operating costs over 30% via advanced vehicle monitoring and management systems" : "  Suite of connected technologies offering fleet agnostic solutions aimed at driving higher revenue through better yield management and dual fleet utilisation to expand customer base  "} 
       </Text>
 
-      <Box width='70%' margin='auto' mt='8' >
+      {/* <Box width='70%' margin='auto' mt='8' >
           {
               features ? <ImageSlider images={solutionImage} /> : <ImageSlider images={servicesImage}  />
           } 
-      </Box>
+      </Box> */}
 
       <Text textAlign='left' ml='8' mt='12' fontSize='2xl' fontWeight='500' color='gray'>FEATURES</Text>
 
