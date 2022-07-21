@@ -1,194 +1,195 @@
 {
-    "zoomcar": [
-        {
-            "id": 1,
-            "Name": "Figo Aspire MT Petrol",
-            "Seat": 5,
-            "CarType": "SUV",
-            "Transmision": "Manual",
-            "Delivery Type": "Home Delivery",
-            "Price": 1696,
-            "Star": "4",
-            "Type": "Petrol",
-            "Distance_Traveled": "unlimiited kms without fuel",
-            "Damage_Protection_Package": 1500,
-            "image": "https://zoomcar-assets.zoomcar.com/photographs/original/dfcced83a3fca58d27ffea0b465b25831edf894e.JPG?1636629514",
-            "Driven": "36,613 kms driven"
-        },
-        {
-            "id": 2,
-            "Name": "Nissan Magnite MT Petrol",
-            "Seat": 5,
-            "CarType": "hatchback",
-            "Transmision": "Manual",
-            "Delivery Type": "Home Delivery",
-            "Price": 1914,
-            "Star": "4.9",
-            "Type": "Petrol",
-            "Distance_Traveled": "unlimiited kms without fuel",
-            "Damage_Protection_Package": 1500,
-            "image": "https://zoomcar-assets.zoomcar.com/photographs/original/4ba3ca93ad356598bc48a63d12e802e85c6e96f9.JPG?1626845553",
-            "Driven": "1,707 kms driven"
-        },
-        {
-            "id": 3,
-            "Name": "Nissan Magnite MT Petrol",
-            "Seat": 5,
-            "CarType": "sedan",
-            "Transmision": "Manual",
-            "Delivery Type": "Home Delivery",
-            "Price": 1777,
-            "Star": "4",
-            "Type": "Petrol",
-            "Distance_Traveled": "unlimiited kms without fuel",
-            "Damage_Protection_Package": 1500,
-            "image": "https://zoomcar-assets.zoomcar.com/photographs/original/4ba3ca93ad356598bc48a63d12e802e85c6e96f9.JPG?1626845553",
-            "Driven": "1,707 kms driven"
-        },
-        {
-            "id": 4,
-            "Name": "Hyundai Santro MT Petrol",
-            "Seat": 7,
-            "CarType": "SUV",
-            "Transmision": "Manual",
-            "Delivery Type": "Home Delivery",
-            "Price": 1753,
-            "Star": "5",
-            "Type": "Petrol",
-            "Distance_Traveled": "unlimiited kms without fuel",
-            "Damage_Protection_Package": 1500,
-            "image": "https://zoomcar-assets.zoomcar.com/photographs/original/aac05ee37980c8d94e9657bc8ddea29312b0e6ae.jpg?1620384508",
-            "Driven": "19,500 kms driven"
-        },
-        {
-            "id": 5,
-            "Name": "Hyundai Santro MT Petrol",
-            "Seat": 6,
-            "CarType": "sedan",
-            "Transmision": "Manual",
-            "Delivery Type": "Airport Delivery",
-            "Price": 1753,
-            "Star": "5",
-            "Type": "Petrol",
-            "Distance_Traveled": "unlimiited kms without fuel",
-            "Damage_Protection_Package": 1500,
-            "image": "https://zoomcar-assets.zoomcar.com/photographs/original/aac05ee37980c8d94e9657bc8ddea29312b0e6ae.jpg?1620384508",
-            "Driven": "19,500 kms driven"
-        },
-        {
-            "id": 6,
-            "Name": "Maruti Dzire MT Petrol",
-            "Seat": 6,
-            "CarType": "sedan",
-            "Transmision": "Manual",
-            "Delivery Type": "Airport Delivery",
-            "Price": 1753,
-            "Star": "5",
-            "Type": "Petrol",
-            "Distance_Traveled": "unlimiited kms without fuel",
-            "Damage_Protection_Package": 1500,
-            "image": "https://zoomcar-assets.zoomcar.com/photographs/original/524fda673d85d7affc94f9c54ddb2ed1219d3a4d.JPG?1638612892",
-            "Driven": "19,500 kms driven"
-        },
-        {
-            "id": 7,
-            "Name": "Grand i10 Sportz MT Petrol",
-            "Seat": 6,
-            "CarType": "sedan",
-            "Transmision": "Manual",
-            "Delivery Type": "Airport Delivery",
-            "Price": 1753,
-            "Star": "4",
-            "Type": "Petrol",
-            "Distance_Traveled": "unlimiited kms without fuel",
-            "Damage_Protection_Package": 1500,
-            "image": "https://zoomcar-assets.zoomcar.com/photographs/original/07c8fa138f6682a46b04cb1d4d0b573552bce3bb.png?1648540529",
-            "Driven": "60,000 kms driven"
-        },
-        {
-            "id": 8,
-            "Name": "Hyundai Santro MT Petrol",
-            "Seat": 5,
-            "CarType": "sedan",
-            "Transmision": "Manual",
-            "Delivery Type": "Airport Delivery",
-            "Price": 1753,
-            "Star": "4.7",
-            "Type": "Petrol",
-            "Distance_Traveled": "unlimiited kms without fuel",
-            "Damage_Protection_Package": 1500,
-            "image": "https://zoomcar-assets.zoomcar.com/photographs/original/aac05ee37980c8d94e9657bc8ddea29312b0e6ae.jpg?1620384508",
-            "Driven": "60,000 kms driven"
-        },
-        {
-            "id": 9,
-            "Name": "Grand i10 Sportz MT Petrol",
-            "Seat": 5,
-            "CarType": "sedan",
-            "Transmision": "Manual",
-            "Delivery Type": "Airport Delivery",
-            "Price": 1753,
-            "Star": "4.7",
-            "Type": "Petrol",
-            "Distance_Traveled": "unlimiited kms without fuel",
-            "Damage_Protection_Package": 1500,
-            "image": "https://zoomcar-assets.zoomcar.com/photographs/original/07c8fa138f6682a46b04cb1d4d0b573552bce3bb.png?1648540529",
-            "Driven": "40,000 kms driven"
-        },
-        {
-            "id": 10,
-            "Name": "Maruti Ertiga Hybrid Petrol",
-            "Seat": 5,
-            "CarType": "sedan",
-            "Transmision": "Manual",
-            "Delivery Type": "Airport Delivery",
-            "Price": 2577,
-            "Star": "4.8",
-            "Type": "Petrol",
-            "Distance_Traveled": "unlimiited kms without fuel",
-            "Damage_Protection_Package": 1500,
-            "image": "https://zoomcar-assets.zoomcar.com/photographs/original/f73fe4cfc5d52e3da10e51da778cf2cced94d3e8.JPG?1623241867",
-            "Driven": "40,000 kms driven"
-        }
-    ],
-    "location": [
-        {
-            "id": 1,
-            "country": "India",
-            "city": [
-                "Bangalore",
-                "Mumbai",
-                "Delhi NCR",
-                "Pune",
-                "Hyderabad"
-            ]
-        },
-        {
-            "id": 2,
-            "country": "Vitenam",
-            "city": [
-                "Ho Chi Minh"
-            ]
-        },
-        {
-            "id": 3,
-            "country": "Indonesia",
-            "city": [
-                "Jakarta"
-            ]
-        },
-        {
-            "id": 4,
-            "country": "Egypt",
-            "city": [
-                "Cairo"
-            ]
-        }
-    ],
-    "user-location": [
-        {
-            "country": "",
-            "city": ""
-        }
-    ]
+  "zoomcar": [
+    {
+      "id": 1,
+      "Name": "Figo Aspire MT Petrol",
+      "Seat": 5,
+      "CarType": "SUV",
+      "Transmision": "Manual",
+      "Delivery Type": "Home Delivery",
+      "Price": 1696,
+      "Star": "4",
+      "Type": "Petrol",
+      "Distance_Traveled": "unlimiited kms without fuel",
+      "Damage_Protection_Package": 1500,
+      "image": "https://zoomcar-assets.zoomcar.com/photographs/original/dfcced83a3fca58d27ffea0b465b25831edf894e.JPG?1636629514",
+      "Driven": "36,613 kms driven"
+    },
+    {
+      "id": 2,
+      "Name": "Nissan Magnite MT Petrol",
+      "Seat": 5,
+      "CarType": "hatchback",
+      "Transmision": "Manual",
+      "Delivery Type": "Home Delivery",
+      "Price": 1914,
+      "Star": "4.9",
+      "Type": "Petrol",
+      "Distance_Traveled": "unlimiited kms without fuel",
+      "Damage_Protection_Package": 1500,
+      "image": "https://zoomcar-assets.zoomcar.com/photographs/original/4ba3ca93ad356598bc48a63d12e802e85c6e96f9.JPG?1626845553",
+      "Driven": "1,707 kms driven"
+    },
+    {
+      "id": 3,
+      "Name": "Nissan Magnite MT Petrol",
+      "Seat": 5,
+      "CarType": "sedan",
+      "Transmision": "Manual",
+      "Delivery Type": "Home Delivery",
+      "Price": 1777,
+      "Star": "4",
+      "Type": "Petrol",
+      "Distance_Traveled": "unlimiited kms without fuel",
+      "Damage_Protection_Package": 1500,
+      "image": "https://zoomcar-assets.zoomcar.com/photographs/original/4ba3ca93ad356598bc48a63d12e802e85c6e96f9.JPG?1626845553",
+      "Driven": "1,707 kms driven"
+    },
+    {
+      "id": 4,
+      "Name": "Hyundai Santro MT Petrol",
+      "Seat": 7,
+      "CarType": "SUV",
+      "Transmision": "Manual",
+      "Delivery Type": "Home Delivery",
+      "Price": 1753,
+      "Star": "5",
+      "Type": "Petrol",
+      "Distance_Traveled": "unlimiited kms without fuel",
+      "Damage_Protection_Package": 1500,
+      "image": "https://zoomcar-assets.zoomcar.com/photographs/original/aac05ee37980c8d94e9657bc8ddea29312b0e6ae.jpg?1620384508",
+      "Driven": "19,500 kms driven"
+    },
+    {
+      "id": 5,
+      "Name": "Hyundai Santro MT Petrol",
+      "Seat": 6,
+      "CarType": "sedan",
+      "Transmision": "Manual",
+      "Delivery Type": "Airport Delivery",
+      "Price": 1753,
+      "Star": "5",
+      "Type": "Petrol",
+      "Distance_Traveled": "unlimiited kms without fuel",
+      "Damage_Protection_Package": 1500,
+      "image": "https://zoomcar-assets.zoomcar.com/photographs/original/aac05ee37980c8d94e9657bc8ddea29312b0e6ae.jpg?1620384508",
+      "Driven": "19,500 kms driven"
+    },
+    {
+      "id": 6,
+      "Name": "Maruti Dzire MT Petrol",
+      "Seat": 6,
+      "CarType": "sedan",
+      "Transmision": "Manual",
+      "Delivery Type": "Airport Delivery",
+      "Price": 1753,
+      "Star": "5",
+      "Type": "Petrol",
+      "Distance_Traveled": "unlimiited kms without fuel",
+      "Damage_Protection_Package": 1500,
+      "image": "https://zoomcar-assets.zoomcar.com/photographs/original/524fda673d85d7affc94f9c54ddb2ed1219d3a4d.JPG?1638612892",
+      "Driven": "19,500 kms driven"
+    },
+    {
+      "id": 7,
+      "Name": "Grand i10 Sportz MT Petrol",
+      "Seat": 6,
+      "CarType": "sedan",
+      "Transmision": "Manual",
+      "Delivery Type": "Airport Delivery",
+      "Price": 1753,
+      "Star": "4",
+      "Type": "Petrol",
+      "Distance_Traveled": "unlimiited kms without fuel",
+      "Damage_Protection_Package": 1500,
+      "image": "https://zoomcar-assets.zoomcar.com/photographs/original/07c8fa138f6682a46b04cb1d4d0b573552bce3bb.png?1648540529",
+      "Driven": "60,000 kms driven"
+    },
+    {
+      "id": 8,
+      "Name": "Hyundai Santro MT Petrol",
+      "Seat": 5,
+      "CarType": "sedan",
+      "Transmision": "Manual",
+      "Delivery Type": "Airport Delivery",
+      "Price": 1753,
+      "Star": "4.7",
+      "Type": "Petrol",
+      "Distance_Traveled": "unlimiited kms without fuel",
+      "Damage_Protection_Package": 1500,
+      "image": "https://zoomcar-assets.zoomcar.com/photographs/original/aac05ee37980c8d94e9657bc8ddea29312b0e6ae.jpg?1620384508",
+      "Driven": "60,000 kms driven"
+    },
+    {
+      "id": 9,
+      "Name": "Grand i10 Sportz MT Petrol",
+      "Seat": 5,
+      "CarType": "sedan",
+      "Transmision": "Manual",
+      "Delivery Type": "Airport Delivery",
+      "Price": 1753,
+      "Star": "4.7",
+      "Type": "Petrol",
+      "Distance_Traveled": "unlimiited kms without fuel",
+      "Damage_Protection_Package": 1500,
+      "image": "https://zoomcar-assets.zoomcar.com/photographs/original/07c8fa138f6682a46b04cb1d4d0b573552bce3bb.png?1648540529",
+      "Driven": "40,000 kms driven"
+    },
+    {
+      "id": 10,
+      "Name": "Maruti Ertiga Hybrid Petrol",
+      "Seat": 5,
+      "CarType": "sedan",
+      "Transmision": "Manual",
+      "Delivery Type": "Airport Delivery",
+      "Price": 2577,
+      "Star": "4.8",
+      "Type": "Petrol",
+      "Distance_Traveled": "unlimiited kms without fuel",
+      "Damage_Protection_Package": 1500,
+      "image": "https://zoomcar-assets.zoomcar.com/photographs/original/f73fe4cfc5d52e3da10e51da778cf2cced94d3e8.JPG?1623241867",
+      "Driven": "40,000 kms driven"
+    }
+  ],
+  "location": [
+    {
+      "id": 1,
+      "country": "India",
+      "city": [
+        "Bangalore",
+        "Mumbai",
+        "Delhi NCR",
+        "Pune",
+        "Hyderabad"
+      ]
+    },
+    {
+      "id": 2,
+      "country": "Vitenam",
+      "city": [
+        "Ho Chi Minh"
+      ]
+    },
+    {
+      "id": 3,
+      "country": "Indonesia",
+      "city": [
+        "Jakarta"
+      ]
+    },
+    {
+      "id": 4,
+      "country": "Egypt",
+      "city": [
+        "Cairo"
+      ]
+    }
+  ],
+  "user-location": [
+    {
+      "country": "India",
+      "city": "Bangalore",
+      "id": 1
+    }
+  ]
 }
