@@ -16,49 +16,48 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import PickUpComponent from "../Components/PickUpComponent";
+import discount from "../Assets/discount.png";
+import referFriends from "../Assets/referFriends.png";
+import trip from "../Assets/trip.png";
+import securityDeposit from "../Assets/securityDeposit.jpeg";
 
 const HomePage = () => {
   return (
     <>
       <Navbar />
       <PickUpComponent />
-      {/* //------------------------------------ */}
       <Box>
         <Flex justifyContent={"center"} m="20px 0px">
           <Image
             w="500px"
             h="270px"
-            src="https://i.ibb.co/TB5KMyC/image-1-5.png"
+            src={referFriends}
             alt="Dan Abramov"
+            cursor="pointer"
           />
           <Image
             w="500px"
             h="270px"
-            src="https://i.ibb.co/GsmQh50/image-2-3.png"
+            src={discount}
             alt="Dan Abramov"
+            cursor="pointer"
           />
         </Flex>
         <Flex bg="rgb(244,244,244)" pt="20px" direction="column">
-          <Image
-            w="1000px"
-            h="600px"
-            m="auto"
-            src="https://i.ibb.co/MncLhs0/image-3-3.png"
-            alt="Dan Abramov"
-          />
+          <Image w="1000px" h="600px" m="auto" src={trip} alt="Dan Abramov" />
           <Image
             w="970px"
             h="500px"
             m="20px auto"
-            src="https://zoomcar-assets.zoomcar.com/pictures/original/1d8cdddd9d45435cbe1b4a5389a5879fc19dc179.jpeg?1652363899"
+            src={securityDeposit}
             alt="Dan Abramov"
           />
         </Flex>
-        <Container maxW="container.lg" p="40px ">
+        <Container maxW="container.lg" padding="15px">
           <Heading as="h4" size="sm" textAlign={"left"} mb="10px">
             OFFERS
           </Heading>
-          <Flex>
+          <Flex margin="auto">
             <Image
               w="300px"
               h="180px"
