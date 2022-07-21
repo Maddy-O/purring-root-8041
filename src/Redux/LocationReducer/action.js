@@ -44,7 +44,7 @@ const addUserLocationFailure = (payload) => {
 };
 
 const addUserLocation = (payload) => (dispatch) => {
-  console.log(payload);
+  // console.log(payload);
   dispatch(addUserLocationRequest());
   axios
     .patch(`http://localhost:8080/user-location/${1}`, payload)
@@ -73,7 +73,7 @@ const getUserLocationFailure = (payload) => {
 };
 
 const getUserLocation = (payload) => (dispatch) => {
-  console.log(payload);
+  // console.log(payload);
   dispatch(getUserLocationRequest());
   axios
     .get("http://localhost:8080/user-location", payload)
