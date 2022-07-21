@@ -4,12 +4,15 @@ import ZmsFooter from "../Components/ZmsFooter";
 import { Flex, Image } from "@chakra-ui/react";
 import Image1 from "../Assets/ImgImg.png";
 import ContactForm from "../Components/ContactForm";
-import Partner from "../Components/PartnerCard";
+import RecordComponent from "../Components/RecordComponent"
+import Partner from "../Components/Partner";
+import ProductOffering from "../Components/ProductOffering";
 
 const Zms = () => {
   return (
     <div>
       <HeroBanner />
+      <ProductOffering/>
       <Partner />
 
       <Flex
@@ -21,7 +24,7 @@ const Zms = () => {
         <Image width="100%" height="100%" src={Image1} alt="demo" />
       </Flex>
 
-      {/* <RecordComponent /> */}
+      <RecordComponent />
 
       <ContactForm />
 
