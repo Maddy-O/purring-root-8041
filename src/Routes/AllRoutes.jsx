@@ -4,6 +4,7 @@ import { CheckoutPage } from "../Pages/CheckoutPage";
 import { FilterPage } from "../Pages/FilterPage";
 import HomePage from "../Pages/HomePage";
 import Location from "../Pages/Location";
+import Zms from "../Pages/Zms";
 
 const AllRoutes = () => {
   return (
@@ -12,6 +13,7 @@ const AllRoutes = () => {
       <Route path="/loc" element={<Location />} />
       <Route path="/filterpage" element={<FilterPage />}></Route>
       <Route path="/checkoutpage" element={<CheckoutPage />}></Route>
+      <Route path="/zms" element={<Zms />}></Route>
     </Routes>
   );
 };
