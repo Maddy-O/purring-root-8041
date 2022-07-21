@@ -33,6 +33,8 @@ export default function Navbar() {
   // get this using useSelector
   const [isAuth, setIsAuth] = useState(false);
 
+  console.log(userCity);
+
   useEffect(() => {
     dispatch(getUserLocation());
   }, [dispatch]);

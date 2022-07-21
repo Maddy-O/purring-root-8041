@@ -52,6 +52,7 @@ const HomePage = () => {
               width="400px"
               bg="gray"
               height="50px"
+              onClick={() => navigate("/filterpage")}
             >
               FIND CARS
             </Button>
