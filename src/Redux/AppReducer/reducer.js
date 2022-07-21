@@ -19,6 +19,18 @@ const reducer = (state = initState, action) => {
     case Types.GET_CAR_FALIURE: {
       return { ...state, isLoading: false, isError: true };
     }
+    case Types.GET_ID_REQUEST:{
+      return{
+        ...state,isLoading:true,isError:false
+      }
+    }
+    case Types.GET_ID_SUCESS:{
+      return{
+        ...state,
+        filterData:action.payload
+
+      }
+    }
     default:
       return state;
   }
