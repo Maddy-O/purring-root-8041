@@ -20,7 +20,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
-import logoHomePage from "../Utils/logoHomePage.png";
+import logoHomePage from "../Assets/logoHomePage.png";
 import { FaUser, FaRegCopy, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserLocation } from "../Redux/LocationReducer/action";
@@ -33,7 +33,7 @@ export default function Navbar() {
   // get this using useSelector
   const [isAuth, setIsAuth] = useState(false);
 
-  console.log(userCity);
+  // console.log(userCity);
 
   useEffect(() => {
     dispatch(getUserLocation());
@@ -126,6 +126,7 @@ export default function Navbar() {
             alignItems={"center"}
             justifyContent={"space-between"}
             direction={"row"}
+            className="navBarRightSide"
           >
             <Text fontWeight={"600"} fontSize="18px">
               Become a Host

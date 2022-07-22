@@ -42,12 +42,12 @@ const getFailId = () => {
     .catch((e) => dispatch(getFail(e)))
 };
 const getCarId=({idd})=>(dispatch)=>{
-  console.log(idd,"pp")
+  // console.log(idd,"pp")
   dispatch(getReqId())
   axios
   .get(`http://localhost:8080/zoomcar/${idd}`)
   .then((r) => {
-    console.log(r.data,"iddata")
+    // console.log(r.data,"iddata")
   dispatch(getSuccId(r.data));
   })
   .catch((e) => dispatch(getFail(e)));

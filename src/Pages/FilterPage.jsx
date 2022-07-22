@@ -15,7 +15,7 @@ export const FilterPage = () => {
   const [metaa, setMet] = useState([]);
   const[idd,setIdd]=useState(0);
   const dispatch = useDispatch();
-  console.log(idd,"iddd");
+  // console.log(idd,"iddd");
   const navigate=useNavigate();
   
 
@@ -28,18 +28,18 @@ export const FilterPage = () => {
 
  const handleCarTypes=(e)=>{
   const datatoset=data.filter((ele)=>ele.CarType == e.target.value)
-  console.log(datatoset)
+  // console.log(datatoset)
   setMet(datatoset)
  };
 
  const handleTransmission=(e)=>{
   const datatoset=data.filter((ele)=>ele.Transmision == e.target.value)
-  console.log(datatoset)
+  // console.log(datatoset)
   setMet(datatoset)
  }
  const handleDelivery=(e)=>{
   const datatoset=data.filter((ele)=>ele.DeliveryType == e.target.value)
-  console.log(datatoset)
+  // console.log(datatoset)
   setMet(datatoset)
  }
 

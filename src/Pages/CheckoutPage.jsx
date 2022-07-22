@@ -7,23 +7,7 @@ import {FcEmptyBattery} from "react-icons/fa"
 import { FaRegBuilding } from "react-icons/fa"
 
 export const CheckoutPage = () => {
-  const filterData=useSelector((state)=>state.AppReducer.filterData)
-  console.log(filterData)
-  // /CarType: "SUV"
-  // Damage_Protection_Package: 1500
-  // DeliveryType: "Home Delivery"
-  // Distance_Traveled: "unlimiited kms without fuel"
-  // Driven: "36,613 kms driven"
-  // Name: "Figo Aspire MT Petrol"
-  // Price: 1696
-  // Seat: 5
-  // Star: "4"
-  // Transmision: "Manual"
-  // Type: "Petrol"
-  // id: 1
-  // image: "https://zoomcar-assets.zoomcar.com/photographs/original/dfcced83a3fca58d27ffea0b465b25831edf894e.JPG?1636629514"
-  // [[Prototype]]: Object
-  //  '/ 
+  const filterData = useSelector((state) => state.AppReducer.filterData);
 
   return (
     <Box width={"100%"} height={"550px"} border={"1px solid none"}>
@@ -36,19 +20,39 @@ export const CheckoutPage = () => {
       
       </Box>
       {/* second box */}
-      <Box width={"100%"} marginTop={"0%"} height={"90px"} display={"flex"} border={"1px solid transparent"} marginTop={"-1"}>
-        <Box width={"25%"} height={"100%"} >
-    
+      <Box
+        width={"100%"}
+        marginTop={"0%"}
+        height={"90px"}
+        display={"flex"}
+        border={"1px solid transparent"}
+      >
+        <Box width={"25%"} height={"100%"}></Box>
+        <Box
+          padding={"2%"}
+          textAlign={"left"}
+          bg={"#f5f5f5"}
+          width={"40%"}
+          height={"100%"}
+          border={"none"}
+          marginTop={"0%"}
+        >
+          <Text fontSize={"18px"} fontWeight={"600"}>
+            {filterData.Name}
+          </Text>
+          <Text fontSize={"10px"}>
+            {filterData.Transmision} . {filterData.Type}
+          </Text>
         </Box>
-        <Box padding={"2%"} textAlign={"left"}bg={"#f5f5f5"} width={"40%"} height={"100%"} border={"none"} marginTop={"0%"}>
-          <Text fontSize={"18px"} fontWeight={"600"} >{filterData.Name}</Text>
-          <Text fontSize={"10px"}>{filterData.Transmision} .  {filterData.Type}</Text>
-        </Box>
-        <Box width={"20%"} height={"95%"} border={"1px solid transparent"} marginLeft={"0.8%"} marginTop={"0.5%"}>
+        <Box
+          width={"20%"}
+          height={"95%"}
+          border={"1px solid transparent"}
+          marginLeft={"0.8%"}
+          marginTop={"0.5%"}
+        >
           <Image src={filterData.image} width={"100%"} height={"100%"}></Image>
-           
         </Box>
-          
           {/* total div */}
           </Box>
           <Box textAlign={"left"} padding={"1%"} marginLeft={"25%"} width={"50%"} height={"300px"} border={"1px solid none"}
@@ -99,8 +103,7 @@ export const CheckoutPage = () => {
                 Checkout Summary
               </Button>
              </Box>
-          
       </Box>
     </Box>
-  )
-}
+  );
+};

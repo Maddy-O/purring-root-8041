@@ -161,6 +161,10 @@
         "Delhi NCR",
         "Pune",
         "Hyderabad"
+      ],
+      "Bangalore": [
+        "Bangalore International Airport",
+        "Yelahanka Railway Station, Yelahanka, 3127564"
       ]
     },
     {
@@ -188,8 +192,68 @@
   "user-location": [
     {
       "country": "India",
-      "city": "Bangalore",
+      "city": "Mumbai",
       "id": 1
+    }
+  ],
+  "location-check": [
+    {
+      "id": 1,
+      "country": "India",
+      "city": [
+        {
+          "Bangalore": [
+            "Bangalore International Airport",
+            "Yelahanka Railway Station, Yelahanka, 3127564"
+          ],
+          "Mumbai": [
+            "T2 - International Airport (P7 parking lot)",
+            "Mumbai Central",
+            "Khargar Station"
+          ],
+          "Delhi NCR": [
+            "Terminal 1, Delhi Airport",
+            "Terminal 2, Delhi Airport",
+            "Terminal 3, Delhi Airport",
+            "New Delhi Railway Station"
+          ],
+          "Pune": [
+            "Pune Railway Station, Koregaon Park, 6637400",
+            "Pune Airport - Parking lot 2"
+          ],
+          "Hyderabad": [
+            "Rajiv Gandhi International Airport, Shamshabad, 4566085",
+            "Secunderabad Junction Raiway Station, Bhoiguda, 3753109"
+          ]
+        }
+      ]
+    }
+  ],
+  "pick-up-location": [
+    {
+      "Bangalore": [
+        "Bangalore International Airport",
+        "Yelahanka Railway Station, Yelahanka, 3127564"
+      ],
+      "Mumbai": [
+        "T2 - International Airport (P7 parking lot)",
+        "Mumbai Central",
+        "Khargar Station"
+      ],
+      "Delhi NCR": [
+        "Terminal 1, Delhi Airport",
+        "Terminal 2, Delhi Airport",
+        "Terminal 3, Delhi Airport",
+        "New Delhi Railway Station"
+      ],
+      "Pune": [
+        "Pune Railway Station, Koregaon Park, 6637400",
+        "Pune Airport - Parking lot 2"
+      ],
+      "Hyderabad": [
+        "Rajiv Gandhi International Airport, Shamshabad, 4566085",
+        "Secunderabad Junction Raiway Station, Bhoiguda, 3753109"
+      ]
     }
   ]
 }

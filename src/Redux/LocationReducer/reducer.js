@@ -5,6 +5,7 @@ const initialState = {
   isLoading: false,
   isError: false,
   currLocation: [],
+  pickUpLoc: [],
 };
 
 const reducer = (state = initialState, action) => {
@@ -28,6 +29,18 @@ const reducer = (state = initialState, action) => {
         isError: false,
       };
     case types.GET_USER_LOC_FAILURE:
+      return { ...state, isLoading: false, isError: true };
+    //--------------------PickUp Loction --------------------------
+    case types.GET_USER_PICKUP_LOC_REQUEST:
+      return { ...state, isLoading: true, isError: false };
+    case types.GET_USER_PICKUP_LOC_SUCCESS:
+      return {
+        ...state,
+        pickUpLoc: payload,
+        isLoading: false,
+        isError: false,
+      };
+    case types.GET_USER_PICKUP_LOC_FAILURE:
       return { ...state, isLoading: false, isError: true };
     default:
       return state;
