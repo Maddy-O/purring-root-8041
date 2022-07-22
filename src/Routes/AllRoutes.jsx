@@ -8,6 +8,8 @@ import Hosts from "../Pages/Hosts";
 import Location from "../Pages/Location";
 import PickUpPage from "../Pages/PickUpPage";
 import Zms from "../Pages/Zms";
+import Signup from "../Pages/Signup";
+import Login from "../Pages/Login";
 
 const AllRoutes = () => {
   const [items, setitems] = useState("");
@@ -24,10 +26,12 @@ const AllRoutes = () => {
       <Route path="/datetime" element={<DateTime />} />
       <Route path="/location" element={<Location setLocation={setitems} />} />
       <Route path="/pickup" element={<PickUpPage />} />
-      <Route path="/filterpage" element={<FilterPage />}></Route>
-      <Route path="/filterpage/checkoutpage" element={<CheckoutPage />}></Route>
-      <Route path="/zms" element={<Zms />}></Route>
-      <Route path="/hosts" element={<Hosts />}></Route>
+      <Route path="/filterpage" element={<FilterPage />} />
+      <Route path="/filterpage/checkoutpage" element={<CheckoutPage />} />
+      <Route path="/zms" element={<Zms />} />
+      <Route path="/hosts" element={<Hosts />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
     </Routes>
   );
 };
