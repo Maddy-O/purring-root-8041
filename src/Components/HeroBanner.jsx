@@ -14,7 +14,7 @@ import Logo from "../Assets/Zmslogowhite.png";
 const HeroBanner = () => {
   return (
     <Box>
-      <Box width="100vw" height="100vh" top="0" position="relative">
+      <Box width="98.9vw" height="100vh" top="0" position="relative">
         <Image
           boxSize="100%"
           objectFit="cover"

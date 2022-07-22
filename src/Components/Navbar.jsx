@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Box,
   Flex,
   Avatar,
-  Link as RouterLink,
   Button,
   Menu,
   MenuButton,
@@ -11,13 +10,9 @@ import {
   MenuItem,
   MenuDivider,
   useDisclosure,
-  useColorModeValue,
-  Stack,
-  useColorMode,
   Center,
   Drawer,
   DrawerBody,
-  DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
   DrawerContent,
@@ -25,15 +20,25 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
-import logoHomePage from "../Utils/logoHomePage.png";
+import logoHomePage from "../Assets/logoHomePage.png";
 import { FaUser, FaRegCopy, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import { getUserLocation } from "../Redux/LocationReducer/action";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
-  const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const dispatch = useDispatch();
+  const userCity = useSelector((state) => state.LocationReducer.currLocation);
   // get this using useSelector
   const [isAuth, setIsAuth] = useState(false);
-  // get city also from home page and show in drawer
+
+  // console.log(userCity);
+
+  useEffect(() => {
+    dispatch(getUserLocation());
+  }, [dispatch]);
+
   return (
     <>
       <Box bg={"black"} color={"white"} px={4}>
@@ -72,14 +77,25 @@ export default function Navbar() {
                     >
                       <Flex alignItems={"center"} gap="10px" height={"50px"}>
                         <FaMapMarkerAlt size={"22"} />
-                        <Text fontSize="16px">Change City</Text>
+                        <Text fontSize="16px">
+                          <Link
+                            to={"/location"}
+                            style={{
+                              textDecoration: "none",
+                              border: "none",
+                              backgroundColor: "white",
+                            }}
+                          >
+                            Change City
+                          </Link>
+                        </Text>
                       </Flex>
                       <Text
                         fontWeight={"600"}
                         fontSize="16px"
                         color={"green.500"}
                       >
-                        Delhi NCR
+                        {userCity[0]?.city}
                       </Text>
                     </Flex>
                     <Flex alignItems={"center"} gap="10px" height={"50px"}>
@@ -110,12 +126,13 @@ export default function Navbar() {
             alignItems={"center"}
             justifyContent={"space-between"}
             direction={"row"}
+            className="navBarRightSide"
           >
             <Text fontWeight={"600"} fontSize="18px">
-          Become a Host
+              <Link to="/hosts">Become a Host</Link>
             </Text>
             <Text fontWeight={"600"} fontSize="18px">
-              ZMS
+              <Link to="/zms">ZMS</Link>
             </Text>
             <Menu>
               <MenuButton
@@ -127,14 +144,11 @@ export default function Navbar() {
               >
                 {isAuth ? (
                   <Text fontWeight={"700"} fontSize="20px">
-                    <RouterLink to="/Signup">
-                    Login / Signup</RouterLink>
+                    ZMS
                   </Text>
                 ) : (
                   <Text fontWeight={"700"} fontSize="20px">
-                      <RouterLink to="/Signup">
                     Username
-                         </RouterLink>
                   </Text>
                 )}
               </MenuButton>
