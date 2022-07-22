@@ -2,7 +2,7 @@ import React from 'react'
 import { GoogleLogin, GoogleLogout } from "react-google-login";
 import { gapi } from "gapi-script"
 import { useEffect ,useState} from "react";
-import { HStack, Box, Image, Container, Heading, Stack, InputGroup, Input, InputLeftAddon, Button, Flex } from '@chakra-ui/react';
+import { HStack, Box, Image, Container, Heading, Stack, InputGroup, Input, InputLeftAddon,InputRightElement, Button, Flex } from '@chakra-ui/react';
 import {useNavigate} from "react-router-dom"
 
 const clientId = "179149206343-n07ms4tjd5pgo0d64v9f8e89u6avnckr.apps.googleusercontent.com"
@@ -11,6 +11,9 @@ const clientId = "179149206343-n07ms4tjd5pgo0d64v9f8e89u6avnckr.apps.googleuserc
 const Signup = () => {
     const [email,setEmail] = useState('')
     const [phone,setPhone] = useState('')
+    const [show, setShow] = React.useState(false)
+    const [password, setPassword] = React.useState('')
+    const handleClick = () => setShow(!show)   
 
     const navigate = useNavigate()
 
@@ -35,7 +38,7 @@ const Signup = () => {
     }
 
     const handlesubmit = ()=>{
-        const loginobj= {email,phone}
+        const loginobj= {email,phone,password}
         localStorage.setItem("Logininfo",JSON.stringify(loginobj));
         navigate("/Login",{replace: true})
     }
@@ -56,6 +59,18 @@ const Signup = () => {
     <InputLeftAddon children='Email'  bg="black"/>
     <Input type='email' color={"black"} placeholder='@gmail.com'  value={email} onChange={(e)=>setEmail(e.target.value)}/>
   </InputGroup>
+  <InputGroup size='md' m="20px auto">
+      <Input
+        pr='4.5rem'
+        type={show ? 'text' : 'password'}
+        placeholder='Enter password' color={"black"} value={password} onChange={(e)=>setPassword(e.target.value)}
+      />
+      <InputRightElement width='4.5rem' >
+        <Button h='1.75rem' size='sm' onClick={handleClick} bg="black">
+          {show ? 'Hide' : 'Show'}
+        </Button>
+      </InputRightElement>
+    </InputGroup>
                 <Button w="lg" bg='rgb(16,163,16)' m="5px auto 20px 0px" onClick={handlesubmit} >Continue</Button>
                 <Heading as='h5' size='sm' color="rgb(16,163,16)">
                     Continue with

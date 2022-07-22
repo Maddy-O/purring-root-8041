@@ -5,14 +5,18 @@ import { useEffect ,useState} from "react";
 import { HStack, Box, Image, Container, Heading, Stack, InputGroup, Input, InputLeftAddon,InputRightElement, Button, Flex } from '@chakra-ui/react';
 import {useNavigate} from "react-router-dom"
 
+
 const clientId = "179149206343-n07ms4tjd5pgo0d64v9f8e89u6avnckr.apps.googleusercontent.com"
 
 
 const Login = () => {
     const [email,setEmail] = useState('')
     const [show, setShow] = React.useState(false)
+    const [password, setPassword] = React.useState('')
     const handleClick = () => setShow(!show)    
 
+    var LogArr = JSON.parse(localStorage.getItem("Logininfo")) 
+        console.log("LogArr",LogArr)
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -36,10 +40,13 @@ const Login = () => {
     }
 
     const handlesubmit = ()=>{
-        var LogArr = JSON.parse(localStorage.getItem("Logininfo")) || [];
-        console.log(LogArr)
-        navigate("/",{replace: true})
+if((LogArr.email === email) &&(password === LogArr.password ) ){
+    navigate("/",{replace: true})
+}else{
+   alert("No Credentials")
+}
     }
+
 
 
     return (
@@ -57,7 +64,7 @@ const Login = () => {
       <Input
         pr='4.5rem'
         type={show ? 'text' : 'password'}
-        placeholder='Enter password' color={"black"}
+        placeholder='Enter password' color={"black"} value={password} onChange={(e)=>setPassword(e.target.value)}
       />
       <InputRightElement width='4.5rem' >
         <Button h='1.75rem' size='sm' onClick={handleClick} bg="black">
