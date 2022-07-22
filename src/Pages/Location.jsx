@@ -15,8 +15,14 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { addUserLocation, getLocation } from "../Redux/LocationReducer/action";
 import { useNavigate } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 
-const Location = () => {
+const Location = ({ setLocation }) => {
+  const [searchParam, setSearchParam] = useSearchParams();
+  const urlCountry = searchParam.getAll("country");
+  const urlCity = searchParam.getAll("city");
+  const [selectedCountry, setSelectedCountry] = useState(urlCountry || "");
+  const [selectedCity, setSelectedCity] = useState(urlCity || "");
   const navigate = useNavigate();
   const { onOpen } = useDisclosure();
   const dispatch = useDispatch();
@@ -41,7 +47,10 @@ const Location = () => {
       cit = currCity;
     }
     // console.log(cou, cit);
+    setSelectedCountry(cou);
+    setSelectedCity(cit);
     dispatch(addUserLocation({ country: cou, city: cit }));
+    setLocation(cit);
     navigate("/");
   };
 
@@ -55,7 +64,21 @@ const Location = () => {
 
   useEffect(() => {
     dispatch(getLocation());
-  }, [location.length, dispatch, setCountry, setCountryIndex]);
+    if (selectedCity || selectedCountry) {
+      let params = {};
+      params.country = selectedCountry;
+      params.city = selectedCity;
+      setSearchParam(params);
+    }
+  }, [
+    location.length,
+    dispatch,
+    setCountry,
+    setCountryIndex,
+    selectedCity,
+    selectedCountry,
+    setSearchParam,
+  ]);
 
   return (
     <>
