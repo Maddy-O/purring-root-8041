@@ -129,7 +129,7 @@ export default function Navbar() {
             className="navBarRightSide"
           >
             <Text fontWeight={"600"} fontSize="18px">
-              Become a Host
+              <Link to="/hosts">Become a Host</Link>
             </Text>
             <Text fontWeight={"600"} fontSize="18px">
               <Link to="/zms">ZMS</Link>
