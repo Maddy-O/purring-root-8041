@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import homeBgImage from "../Utils/bg-desktop.png";
+import homeBgImage from "../Assets/bg-desktop.png";
 import { FaCircle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { Box, Flex, Text, Button, Input } from "@chakra-ui/react";

@@ -23,13 +23,6 @@ import securityDeposit from "../Assets/securityDeposit.jpeg";
 import { useSearchParams } from "react-router-dom";
 
 const HomePage = () => {
-  const [searchParam, setSearchParam] = useSearchParams();
-  const urlCountry = searchParam.getAll("country");
-  const urlCity = searchParam.getAll("city");
-
-  console.log(searchParam)
-
-
   return (
     <>
       <Navbar />

@@ -20,7 +20,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
-import logoHomePage from "../Utils/logoHomePage.png";
+import logoHomePage from "../Assets/logoHomePage.png";
 import { FaUser, FaRegCopy, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserLocation } from "../Redux/LocationReducer/action";
