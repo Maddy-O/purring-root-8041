@@ -1,8 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Button, Input, Flex, Text } from "@chakra-ui/react";
 import { FiArrowLeft } from "react-icons/fi";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  getUserLocation,
+  getUserPickUpLoc,
+  getCheckLoc,
+} from "../Redux/LocationReducer/action";
 
 const PickUpPage = () => {
+  const [b, setb] = useState("");
+  const dispatch = useDispatch();
+  const userCity = useSelector((state) => state.LocationReducer.currLocation);
+  const pickUpLoc = useSelector((state) => state.LocationReducer.pickUpLoc[0]);
+
+  // const asArray = Object.entries(pickUpLoc);
+  // const data = Object.keys(pickUpLoc).filter((e) => e.includes(b));
+  // const filtered = asArray.filter(([key, value]) =>  key === 'Pune');
+
+  console.log(pickUpLoc);
+
+  useEffect(() => {
+    dispatch(getUserLocation());
+    setb(userCity[0]?.city);
+    dispatch(getUserPickUpLoc());
+  }, [dispatch]);
+
   return (
     <Box padding={"20px"}>
       <Box>
@@ -26,20 +49,7 @@ const PickUpPage = () => {
           <Text>Select Location on Map</Text>
         </Box>
       </Flex>
-      <Box>
-        <Box>
-          <Text>SUGGESTED PICK UP LOCATIONS</Text>
-        </Box>
-        <Box>
-          <Text>Airport</Text>
-        </Box>
-        <Box>
-          <Text>Railway Station</Text>
-        </Box>
-        <Box>
-          <Text>City Bus Station</Text>
-        </Box>
-      </Box>
+      <Box></Box>
     </Box>
   );
 };
