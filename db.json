@@ -161,6 +161,10 @@
         "Delhi NCR",
         "Pune",
         "Hyderabad"
+      ],
+      "Bangalore": [
+        "Bangalore International Airport",
+        "Yelahanka Railway Station, Yelahanka, 3127564"
       ]
     },
     {
@@ -188,7 +192,7 @@
   "user-location": [
     {
       "country": "India",
-      "city": "Bangalore",
+      "city": "Mumbai",
       "id": 1
     }
   ],

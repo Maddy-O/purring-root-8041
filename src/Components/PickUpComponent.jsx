@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import homeBgImage from "../Utils/bg-desktop.png";
 import { FaCircle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import { Box, Flex, Text, Button } from "@chakra-ui/react";
+import { Box, Flex, Text, Button, Input } from "@chakra-ui/react";
+import DateTimePicker from "react-datetime-picker";
 
 const PickUpComponent = () => {
   const navigate = useNavigate();
+  const [value, onChange] = useState(new Date());
 
   return (
     <Box
@@ -42,6 +44,9 @@ const PickUpComponent = () => {
           >
             <FaCircle size={"10px"} color="green" />
             <Text color="gray">Pick Up City, Airpot, Address or Hotel</Text>
+          </Box>
+          <Box>
+            <DateTimePicker height="100px" onChange={onChange} value={value} />
           </Box>
           <Button
             border="1px solid gary"

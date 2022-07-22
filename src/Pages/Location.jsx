@@ -17,7 +17,7 @@ import { addUserLocation, getLocation } from "../Redux/LocationReducer/action";
 import { useNavigate } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 
-const Location = () => {
+const Location = ({ setLocation }) => {
   const [searchParam, setSearchParam] = useSearchParams();
   const urlCountry = searchParam.getAll("country");
   const urlCity = searchParam.getAll("city");
@@ -50,6 +50,7 @@ const Location = () => {
     setSelectedCountry(cou);
     setSelectedCity(cit);
     dispatch(addUserLocation({ country: cou, city: cit }));
+    setLocation(cit);
     navigate("/");
   };
 

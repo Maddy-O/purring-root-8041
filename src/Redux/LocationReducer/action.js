@@ -105,7 +105,7 @@ const getUserPickUpLoc = (payload) => (dispatch) => {
   // console.log(payload);
   dispatch(getUserPickUpLocRequest());
   axios
-    .get("http://localhost:8080/pick-up-location", payload)
+    .get("http://localhost:8080/location", payload)
     .then((response) => dispatch(getUserPickUpLocSuccess(response.data)))
     .catch((response) => dispatch(getUserPickUpLocFailure(response.data)));
 };
