@@ -12,13 +12,15 @@ const PickUpPage = () => {
   const [b, setb] = useState("");
   const dispatch = useDispatch();
   const userCity = useSelector((state) => state.LocationReducer.currLocation);
-  const pickUpLoc = useSelector((state) => state.LocationReducer.pickUpLoc[0]);
+  const pickUpLoc = useSelector((state) => state.LocationReducer.pickUpLoc);
 
   // const asArray = Object.entries(pickUpLoc);
-  // const data = Object.keys(pickUpLoc).filter((e) => e.includes(b));
+  // const data = Object.keys(pickUpLoc[0]).filter((e, value) =>
+  //   e.includes(b) ? [...e] : [...e]
+  // );
   // const filtered = asArray.filter(([key, value]) =>  key === 'Pune');
 
-  console.log(pickUpLoc);
+  // console.log(data);
 
   useEffect(() => {
     dispatch(getUserLocation());
