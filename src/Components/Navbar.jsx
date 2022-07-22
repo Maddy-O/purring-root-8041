@@ -126,6 +126,7 @@ export default function Navbar() {
             alignItems={"center"}
             justifyContent={"space-between"}
             direction={"row"}
+            className="navBarRightSide"
           >
             <Text fontWeight={"600"} fontSize="18px">
               Become a Host

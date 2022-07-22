@@ -27,7 +27,7 @@ const HomePage = () => {
       <Navbar />
       <PickUpComponent />
       <Box>
-        <Flex justifyContent={"center"} m="20px 0px">
+        <Flex justifyContent={"center"} m="20px 0px" flexWrap="wrap">
           <Image
             w="500px"
             h="270px"
@@ -57,7 +57,7 @@ const HomePage = () => {
           <Heading as="h4" size="sm" textAlign={"left"} mb="10px">
             OFFERS
           </Heading>
-          <Flex margin="auto">
+          <Flex margin="auto" flexWrap="wrap">
             <Image
               w="300px"
               h="180px"
