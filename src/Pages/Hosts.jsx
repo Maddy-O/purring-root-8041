@@ -2,7 +2,7 @@ import { Box, Image, Text } from "@chakra-ui/react";
 import React from "react";
 // import FAQ from "../Components/FAQ";
 // import Growing from "../Components/Growing";
-// import HostBanner from "../Components/HostBanner";
+import HostBanner from "../Components/HostBanner";
 import NavbarHost from "../Components/NavbarHost";
 // import Review from "../Components/Review";
 
@@ -14,10 +14,10 @@ const Hosts = () => {
 
 
       <NavbarHost />
+{/* 
+      {/* <HostBanner/> */}
 
-      {/* <HostBanner/>
-
-      <Video />
+      {/* <Video />
       <Box width="80%" margin="auto" mt="10">
         <Image src="https://www.zoomcar.com/zap/subscribe/build/2a59620f522135d45def6fbc74162966.webp"></Image>
       </Box>
@@ -60,7 +60,7 @@ const Hosts = () => {
       <Growing/>
       <Review />
 
-      <FAQ /> */}
+      <FAQ />  */}
     </Box>
   );
 };
