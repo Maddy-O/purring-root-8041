@@ -1,8 +1,10 @@
 import { Box, Container } from "@chakra-ui/react";
-import React, { useState } from "react";
-import { DateRange, DateRangePicker } from "react-date-range";
+import React, { useEffect, useState } from "react";
+import { DateRangePicker } from "react-date-range";
 import { addDays } from "date-fns";
 import { ThemeProvider } from "styled-components";
+import "react-date-range/dist/styles.css";
+import "react-date-range/dist/theme/default.css";
 
 const DateTime = () => {
   let handleSelect = (date) => {
@@ -15,22 +17,23 @@ const DateTime = () => {
       key: "selection",
     },
   ]);
+
+  // const [state, setState] = useState([]);
+
+  // useEffect(() => {
+  //   if (state.length === 0) {
+  //     setState([
+  //       {
+  //         startDate: new Date(),
+  //         endDate: addDays(new Date(), 7),
+  //         key: "selection",
+  //       },
+  //     ]);
+  //   }
+  // }, [state, setState]);
   return (
-    <ThemeProvider
-      theme={{
-        breakpoints: ["32em", "48em", "64em"],
-        reactDatepicker: {
-          daySize: [36, 40],
-          fontFamily: "system-ui, -apple-system",
-          colors: {
-            accessibility: "#D80249",
-            selectedDay: "#f7518b",
-            selectedDayHover: "#F75D95",
-            primaryColor: "#d8366f",
-          },
-        },
-      }}
-    >
+    // <ThemeProvider>
+    <Box height={"100vh"} backgroundColor="white" color={"black"}>
       <DateRangePicker
         onChange={(item) => setState([item.selection])}
         showSelectionPreview={true}
@@ -41,7 +44,19 @@ const DateTime = () => {
         preventSnapRefocus={true}
         calendarFocus="backwards"
       />
-    </ThemeProvider>
+    </Box>
+    // </ThemeProvider>
+    // <div key={JSON.stringify(state)}>
+    //   <h1>Hello</h1>
+    //   <DateRangePicker
+    //     onChange={(item) => setState([item.selection])}
+    //     showSelectionPreview={true}
+    //     moveRangeOnFirstSelection={false}
+    //     months={2}
+    //     ranges={state}
+    //     direction="horizontal"
+    //   />
+    // </div>
   );
 };
 
