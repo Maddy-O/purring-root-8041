@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box,Text,Image, List } from '@chakra-ui/react' 
+import { Box,Text,Image, List, Button, filter } from '@chakra-ui/react' 
 import { useSelector } from 'react-redux'
 import {ArrowBackIcon, StarIcon} from "@chakra-ui/icons"
 import {Link as RouterLink} from "react-router-dom"
@@ -26,7 +26,7 @@ export const CheckoutPage = () => {
   //  '/ 
 
   return (
-    <Box width={"100%"} height={"550px"} border={"1px solid black"}>
+    <Box width={"100%"} height={"550px"} border={"1px solid none"}>
      
       {/* first box */}
       <Box width={"100%"} height={"50px"} bg={"#f5f5f5"} textAlign={"left"}>
@@ -52,7 +52,7 @@ export const CheckoutPage = () => {
           {/* total div */}
           </Box>
           <Box textAlign={"left"} padding={"1%"} marginLeft={"25%"} width={"50%"} height={"300px"} border={"1px solid none"}
-            boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px;"}
+          
            >
           
             <Box width={"100%"} marginBottom={"3%"}>
@@ -68,7 +68,7 @@ export const CheckoutPage = () => {
             alt="sf" width={"5%"} height={"20px"} marginTop={"5%"}/>
          <Text fontSize={"16px"} marginLeft={"2%"} marginTop={"4.5%"}>Unlimited Kms without Fuel</Text> 
             </Box>
-            <Box display={"flex"} width={"100%"} marginTop={"2%"}>
+            <Box display={"flex"} width={"100%"} marginTop={"1%"}>
              <StarIcon w={"6"} h={"8"} color={"gold"}></StarIcon>
               <Text fontSize={"14px"} marginLeft={"2%"} marginTop={"2%"}>3.7 (6) . {filterData.Driven}</Text>
             </Box>
@@ -78,9 +78,27 @@ export const CheckoutPage = () => {
               height={[20,50,50]} border={"none"}>
               you will get a clean and sanitized car.Exact car location will be shared post-booking
             </Box>
-            <Box marginTop={"4%"} width={"100%"} border={"1px solid crimson"} >
+            <Box marginTop={"1%"} width={"100%"} fontSize={"19px"}
+             border={"1px solid none"} >
               <Text fontWeight={"600"}>Damage Protection Package</Text>
+               <Text fontSize={"14px"} marginBottom={"0.3%"}>Standard (₹509)</Text>
+               <Text fontSize={"10px"}>You pay up to INR 3499 in case of any damage</Text>
             </Box>
+            <Box marginTop={"2%"} 
+             width={"100%"} height={"70px"}>
+              <Box display={"flex"}>
+              <Text fontWeight={"600"} fontSize={"18px"}>₹{filterData.Price+509}</Text> 
+              
+
+             
+              </Box>
+             
+
+              <Button fontSize={"20px"}
+               width={"100%"} height={"60px"} bg={"green"} color={"white"}>
+                Checkout Summary
+              </Button>
+             </Box>
           
       </Box>
     </Box>

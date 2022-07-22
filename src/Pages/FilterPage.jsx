@@ -85,10 +85,11 @@ export const FilterPage = () => {
   
         width={"27%"}
         height={"100%"}
-        border={"1px solid green"}
+        border={"1px solid none"}
         marginRight={"2%"}
+        boxShadow={"rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"}
       >
-        <Box width={"100%"} height={"100px"} border={"1px solid yellow"}>
+        <Box width={"100%"} height={"100px"} border={"1px solid none"}>
           <Text fontSize={"20px"}>SEATS</Text>
               <Button
                 value={5}
@@ -114,7 +115,7 @@ export const FilterPage = () => {
         </Box>
 
         {/* car Types */}
-        <Box width={"100%"} height={"100px"} border={"1px solid yellow"}>
+        <Box width={"100%"} height={"100px"} border={"1px solid none"}>
           <Text fontSize={"20px"}>CAR TYPES</Text>
               <Button
                 value={"SUV"}
@@ -140,7 +141,7 @@ export const FilterPage = () => {
         </Box>
         {/* Transmission */}
                 
-        <Box width={"100%"} height={"100px"} border={"1px solid yellow"} >
+        <Box width={"100%"} height={"100px"} border={"1px solid none"} >
           <Text fontSize={"20px"}>TRANSMISSION</Text>
               <Button
                 value={"Manual"}
@@ -160,7 +161,7 @@ export const FilterPage = () => {
               
         </Box>
         {/* Delivery div */}
-        <Box width={"100%"} height={"100px"} border={"1px solid yellow"}>
+        <Box width={"100%"} height={"100px"} border={"1px solid none"}>
           <Text fontSize={"20px"}>DELIVERY TYPE</Text>
               <Button
                 value={"Home Delivery"}
@@ -210,7 +211,7 @@ export const FilterPage = () => {
                   src={item.image}
                   alt="nsbns"
                   width={"70%"}
-                  height={"40%"}
+                  height={"30%"}
                 />
               </Box>
               {/* centernamediv */}
@@ -220,11 +221,11 @@ export const FilterPage = () => {
                 border={"1px solid transparent"}
                 marginRight={"1.4%"}
               >
-                <Text>{item.Name}</Text>
-                <Text fontSize={"12px"}>
+                <Text marginTop={"3%"}>{item.Name}</Text>
+                <Text marginTop={"3%"} fontSize={"12px"}>
                   {item.Transmision} . {item.Type} . {item.Seat}seat
                 </Text>
-                <Text fontSize={"10px"}>
+                <Text fontSize={"10px"} marginTop={"3.5%"}>
                   <StarIcon w={15} h={15} color={"#FFD700"}></StarIcon>{" "}
                   {item.Star} . {item.Driven}
                 </Text>
