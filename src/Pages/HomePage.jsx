@@ -20,7 +20,7 @@ import discount from "../Assets/discount.png";
 import referFriends from "../Assets/referFriends.png";
 import trip from "../Assets/trip.png";
 import securityDeposit from "../Assets/securityDeposit.jpeg";
-import { useSearchParams } from "react-router-dom";
+
 
 const HomePage = () => {
   return (

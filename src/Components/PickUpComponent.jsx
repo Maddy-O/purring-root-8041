@@ -45,14 +45,14 @@ const PickUpComponent = () => {
             <FaCircle size={"10px"} color="green" />
             <Text color="gray">Pick Up City, Airpot, Address or Hotel</Text>
           </Box>
-          <Box>
+          <Box onClick={() => navigate("/datetime")}>
             <DateTimePicker height="100px" onChange={onChange} value={value} />
           </Box>
           <Button
             border="1px solid gary"
             boxShadow="2px 2px 2px gray"
             width="400px"
-            bg="gray"
+            bg="#d9d9d9"
             height="50px"
             onClick={() => navigate("/filterpage")}
           >

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { CheckoutPage } from "../Pages/CheckoutPage";
+import DateTime from "../Pages/DateTime";
 import { FilterPage } from "../Pages/FilterPage";
 import HomePage from "../Pages/HomePage";
 import Location from "../Pages/Location";
@@ -19,6 +20,7 @@ const AllRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
+      <Route path="/datetime" element={<DateTime />} />
       <Route path="/location" element={<Location setLocation={setitems} />} />
       <Route path="/pickup" element={<PickUpPage />} />
       <Route path="/filterpage" element={<FilterPage />}></Route>
