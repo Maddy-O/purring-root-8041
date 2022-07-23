@@ -8,8 +8,8 @@ import Hosts from "../Pages/Hosts";
 import Location from "../Pages/Location";
 import PickUpPage from "../Pages/PickUpPage";
 import Zms from "../Pages/Zms";
-// import Signup from "../Pages/Signup";
-// import Login from "../Pages/Login";
+import Signup from "../Pages/Signup";
+import Login from "../Pages/Login";
 
 const AllRoutes = () => {
   const [items, setitems] = useState("");
@@ -42,8 +42,8 @@ const AllRoutes = () => {
       <Route path="/filterpage/checkoutpage" element={<CheckoutPage />} />
       <Route path="/zms" element={<Zms />} />
       <Route path="/hosts" element={<Hosts />} />
-      {/* <Route path="/login" element={<Login />} /> */}
-      {/* <Route path="/signup" element={<Signup />} /> */}
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
     </Routes>
   );
 };
