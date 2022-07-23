@@ -19,6 +19,7 @@ import {
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon, AddIcon } from '@chakra-ui/icons';
 import Logo from "../Assets/Zmslogowhite.png";
+import { useNavigate } from 'react-router-dom';
 
 const Links = ['Contact Us', "FAQ's", 'Refer & Earn', "Logout"];
 
@@ -38,6 +39,11 @@ const NavLink = ({ children }: { children: ReactNode }) => (
 
 export default function NavbarHost() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate('/zms')
+
+  }
 
   return (
     <Box bg='black' position='fixed' zIndex='1'>
@@ -71,6 +77,7 @@ export default function NavbarHost() {
              color='white'
               size={'sm'}
               mr={4}
+              onClick={handleClick}
               >
               Start Earning
             </Button>

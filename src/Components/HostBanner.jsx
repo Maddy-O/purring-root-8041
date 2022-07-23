@@ -1,7 +1,13 @@
 import React from 'react'
 import {Box, Image, Flex, Text, Spacer, Button, VStack} from "@chakra-ui/react"
+import { useNavigate } from 'react-router-dom'
 
 const HostBanner = () => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate('/zms')
+
+  }
   return (
     <Box>
     <Box width="80%"  top="0" position="relative" margin='auto' visibility={{base:'hidden', lg:"visible"}}>
@@ -52,6 +58,7 @@ const HostBanner = () => {
             fontWeight="400"
             mt="8"
             width={{ base: "100%" }}
+            onClick= {handleClick}
           >
             Start Earning
           </Button>
