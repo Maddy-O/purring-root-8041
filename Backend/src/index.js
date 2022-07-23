@@ -10,10 +10,6 @@ const app=express();
 app.use(express.json());
 app.use(cors());
 
-// step 2 create schema
-
-
-app.use("/car",carController)
 app.use("/user",userController)
 
 app.listen(process.env.PORT || 5500,async function (){
