@@ -240,7 +240,7 @@ export const FilterPage = () => {
               >
                 <Heading>₹{item.Price}</Heading>
                 <Button
-                  value={`${item.id}`}
+                  value={`${item._id}`}
                   height={"50%"}
                   width={"50%"}
                   borderRadius={"20px"}
