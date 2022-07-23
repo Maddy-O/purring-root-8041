@@ -40,9 +40,11 @@ const DateTime = ({ setDateData }) => {
         preventSnapRefocus={true}
         calendarFocus="backwards"
       />
-      <Button backgroundColor="#e0e0e0" onClick={() => handleSelect(state)}>
-        Done
-      </Button>
+      <Box>
+        <Button backgroundColor="#e0e0e0" onClick={() => handleSelect(state)}>
+          Done
+        </Button>
+      </Box>
     </Box>
   );
 };
