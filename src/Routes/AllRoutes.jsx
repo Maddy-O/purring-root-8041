@@ -22,8 +22,7 @@ const AllRoutes = () => {
     localStorage.setItem("items", JSON.stringify(items));
   }, [items]);
 
-  console.log(dateData);
-
+  // console.log(dateData);
   return (
     <Routes>
       <Route
