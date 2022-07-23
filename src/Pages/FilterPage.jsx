@@ -77,7 +77,7 @@ export const FilterPage = () => {
   return (
     <Box
       width={"100"}
-      height={"400px"}
+      height={["500px,550px,400px"]}
       border={"1px solid transparent"}
       display={"flex"}
     >
@@ -90,11 +90,11 @@ export const FilterPage = () => {
         boxShadow={"rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"}
       >
         <Box width={"100%"} height={"100px"} border={"1px solid none"}>
-          <Text fontSize={"20px"}>SEATS</Text>
-              <Button
+          <Text fontSize={["12px","20px"]}>SEATS</Text>
+              <Button 
                 value={5}
                 bg={"light-grey"} border={"1px solid grey"}
-                 width={"30%"}
+                 width={["10%","30%"]}
                 onClick={(e) => handleFilter(e)}
                 cursor="pointer" 
               >
@@ -102,25 +102,26 @@ export const FilterPage = () => {
               </Button>
               <Button value={6} 
                 bg={"light-grey"} border={"1px solid grey"}
-               width={"30%"}
+                width={["10%","30%"]}
               onClick={(e) => handleFilter(e)}>
                 6
               </Button>
               <Button value={7} 
                 bg={"light-grey"} border={"1px solid grey"}
-                width={"33%"}
+                width={["10%","30%"]}
               onClick={(e) => handleFilter(e)}>
                 7
               </Button>
         </Box>
 
         {/* car Types */}
-        <Box width={"100%"} height={"100px"} border={"1px solid none"}>
-          <Text fontSize={"20px"}>CAR TYPES</Text>
+        <Box 
+        width={"100%"} height={"100px"} border={"1px solid none"}>
+          <Text fontSize={["12px","12px","20px"]}>CAR TYPES</Text>
               <Button
                 value={"SUV"}
                 bg={"light-grey"} border={"1px solid grey"}
-                 width={"30%"}
+                 width={["40%"]}
                 onClick={(e) => handleCarTypes(e)}
                 cursor="pointer" 
               >
@@ -128,13 +129,14 @@ export const FilterPage = () => {
               </Button>
               <Button value={"sedan"} 
                 bg={"light-grey"} border={"1px solid grey"}
-               width={"30%"}
+                width={["40%"]}
+                // width={["100%","100%","30%"]}
               onClick={(e) => handleCarTypes(e)}>
                 Sedan
               </Button>
               <Button value={"hatchback"} 
                 bg={"light-grey"} border={"1px solid grey"}
-                width={"33%"}
+                width={["100%","100%","50%"]}
               onClick={(e) => handleCarTypes(e)}>
                 hatchback
               </Button>
@@ -142,11 +144,11 @@ export const FilterPage = () => {
         {/* Transmission */}
                 
         <Box width={"100%"} height={"100px"} border={"1px solid none"} >
-          <Text fontSize={"20px"}>TRANSMISSION</Text>
+          <Text fontSize={["12px","12px","20px"]}>TRANSMISSION</Text>
               <Button
                 value={"Manual"}
                 bg={"light-grey"} border={"1px solid grey"}
-                 width={"30%"}
+                width={["100%","100%","30%"]}
                 onClick={(e) => handleTransmission(e)}
                 cursor="pointer" 
               >
@@ -154,7 +156,7 @@ export const FilterPage = () => {
               </Button>
               <Button value={"Automatic"} 
                 bg={"light-grey"} border={"1px solid grey"}
-               width={"30%"}
+                width={["100%","100%","30%"]}
               onClick={(e) => handleTransmission(e)}>
                 Automatic
               </Button>
@@ -162,11 +164,11 @@ export const FilterPage = () => {
         </Box>
         {/* Delivery div */}
         <Box width={"100%"} height={"100px"} border={"1px solid none"}>
-          <Text fontSize={"20px"}>DELIVERY TYPE</Text>
+          <Text fontSize={["12px","12px","20px"]}>DELIVERY TYPE</Text>
               <Button
                 value={"Home Delivery"}
                 bg={"light-grey"} border={"1px solid grey"}
-                 width={"30%"}
+                width={["100%","100%","30%"]}
                 onClick={(e) => handleDelivery(e)}
                 cursor="pointer" 
               >
@@ -174,7 +176,7 @@ export const FilterPage = () => {
               </Button>
               <Button value={"Airport Delivery"} 
                 bg={"light-grey"} border={"1px solid grey"}
-               width={"30%"}
+              width={["100%","100%","30%"]}
               onClick={(e) => handleDelivery(e)}>
                 Airport 
               </Button>
