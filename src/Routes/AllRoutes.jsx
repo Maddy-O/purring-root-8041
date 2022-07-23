@@ -10,41 +10,62 @@ import PickUpPage from "../Pages/PickUpPage";
 import Zms from "../Pages/Zms";
 import Signup from "../Pages/Signup";
 import Login from "../Pages/Login";
+import ReqAuth from "../Components/ReqAuth";
+import Navbar from "../Components/Navbar";
 
 const AllRoutes = () => {
   const [items, setitems] = useState("");
+  const [isAuth, setIsAuth] = useState(false);
   const [selectPickupPoint, setPickupPoint] = useState(false);
   const [dateData, setDateData] = useState({
     startDate: "",
     enDate: "",
   });
+
   useEffect(() => {
     localStorage.setItem("items", JSON.stringify(items));
   }, [items]);
 
-  // console.log(dateData);
+  console.log(isAuth);
   return (
-    <Routes>
-      <Route
-        path="/"
-        element={<HomePage point={selectPickupPoint} dateData={dateData} />}
-      />
-      <Route
-        path="/datetime"
-        element={<DateTime setDateData={setDateData} />}
-      />
-      <Route path="/location" element={<Location setLocation={setitems} />} />
-      <Route
-        path="/pickup"
-        element={<PickUpPage setPoint={setPickupPoint} />}
-      />
-      <Route path="/filterpage" element={<FilterPage />} />
-      <Route path="/filterpage/checkoutpage" element={<CheckoutPage />} />
-      <Route path="/zms" element={<Zms />} />
-      <Route path="/hosts" element={<Hosts />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<Signup />} />
-    </Routes>
+    <>
+      <Navbar setIsAuth={setIsAuth} />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <HomePage
+              point={selectPickupPoint}
+              dateData={dateData}
+              setIsAuth={setIsAuth}
+            />
+          }
+        />
+        <Route
+          path="/datetime"
+          element={<DateTime setDateData={setDateData} />}
+        />
+        <Route path="/location" element={<Location setLocation={setitems} />} />
+        <Route
+          path="/pickup"
+          element={<PickUpPage setPoint={setPickupPoint} />}
+        />
+
+        <Route path="/filterpage" element={<FilterPage />} />
+        <Route
+          path="/filterpage/checkoutpage"
+          element={
+            <ReqAuth isAuth={isAuth}>
+              <CheckoutPage />
+            </ReqAuth>
+          }
+        />
+        <Route path="/zms" element={<Zms />} />
+        <Route path="/hosts" element={<Hosts />} />
+        <Route path="/login" element={<Login setIsAuth={setIsAuth} />} />
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
+    </>
   );
 };
 

@@ -12,7 +12,7 @@ import {
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Login = ({ setIsAuth }) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [show, setShow] = React.useState(false);
@@ -23,6 +23,7 @@ const Login = () => {
 
   const handlesubmit = () => {
     if (LogArr.email === email && password === LogArr.password) {
+      setIsAuth(true);
       navigate("/", { replace: true });
     } else {
       alert("No Credentials");

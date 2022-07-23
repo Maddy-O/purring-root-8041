@@ -24,7 +24,6 @@ import securityDeposit from "../Assets/securityDeposit.jpeg";
 const HomePage = ({ point, dateData }) => {
   return (
     <>
-      <Navbar />
       <PickUpComponent point={point} dateData={dateData} />
       <Box>
         <Flex justifyContent={"center"} m="20px 0px" flexWrap="wrap">

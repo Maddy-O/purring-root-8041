@@ -12,9 +12,6 @@ import {
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 
-const clientId =
-  "179149206343-n07ms4tjd5pgo0d64v9f8e89u6avnckr.apps.googleusercontent.com";
-
 const Signup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -32,7 +29,7 @@ const Signup = () => {
   };
 
   return (
-    <div>
+    <div style={{ height: "100vh" }}>
       <Container maxW="550px" color="white" h="100vh">
         <Image
           boxSize="sm"
