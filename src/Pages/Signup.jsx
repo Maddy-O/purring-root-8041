@@ -1,6 +1,6 @@
 import React from "react";
-import { GoogleLogin, GoogleLogout } from "react-google-login";
-import { gapi } from "gapi-script";
+// import { GoogleLogin, GoogleLogout } from "react-google-login";
+// import { gapi } from "gapi-script";
 import { useEffect, useState } from "react";
 import {
   Image,
@@ -27,15 +27,15 @@ const Signup = () => {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    function start() {
-      gapi.client.init({
-        clientId: clientId,
-        scope: "",
-      });
-    }
-    gapi.load("client:auth2", start);
-  });
+  // useEffect(() => {
+  //   function start() {
+  //     gapi.client.init({
+  //       clientId: clientId,
+  //       scope: "",
+  //     });
+  //   }
+  //   gapi.load("client:auth2", start);
+  // });
 
   const onFailure = (res) => {
     console.log("Login success! Current User", res.profileObj);
@@ -112,7 +112,7 @@ const Signup = () => {
           Continue with
         </Heading>
         <Flex justifyContent={"center"} gap="20px" m="20px auto">
-          <GoogleLogin
+          {/* <GoogleLogin
             clientId={clientId}
             buttonText="Login"
             onSuccess={onSuccess}
@@ -124,7 +124,7 @@ const Signup = () => {
             clientId={clientId}
             buttonText={"Logout"}
             onLogoutSuccess={onSuccesslogout}
-          />
+          /> */}
         </Flex>
       </Container>
     </div>
