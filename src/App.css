@@ -1,0 +1,12 @@
+.App {
+  text-align: center;
+  background-color: white;
+  color: black;
+}
+
+@media only screen and (min-width:820px) {
+  .navBarRightSide {
+    display: none;
+    /* visibility: hidden; */
+  }
+}
