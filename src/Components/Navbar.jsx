@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import NavBarBefore from "./NavBar/NavBarBefore";
 import NavBarAfter from "./NavBar/NavBarAfter";
 
-export default function Navbar({ setIsAuth }) {
+export default function Navbar({ setIsAuth, isAuth }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const userCity = useSelector((state) => state.LocationReducer.currLocation);
@@ -14,12 +14,12 @@ export default function Navbar({ setIsAuth }) {
   const handleLogout = () => {
     const loginobj = { name: "", email: "", phone: "", password: "" };
     localStorage.setItem("Logininfo", JSON.stringify(loginobj));
-    setIsAuth(false);
+    setIsAuth(!isAuth);
     navigate("/Login", { replace: true });
   };
 
   const handleLogin = () => {
-    setIsAuth(true);
+    setIsAuth(!isAuth);
     navigate("/Login", { replace: true });
   };
 
@@ -29,11 +29,11 @@ export default function Navbar({ setIsAuth }) {
     if (items) {
       setUserName(items);
     }
-  }, [dispatch]);
+  }, [dispatch, isAuth]);
 
   return (
     <>
-      {userName.name ? (
+      {isAuth ? (
         <NavBarAfter
           userName={userName}
           userCity={userCity}

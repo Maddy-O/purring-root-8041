@@ -26,10 +26,9 @@ const AllRoutes = () => {
     localStorage.setItem("items", JSON.stringify(items));
   }, [items]);
 
-  console.log(isAuth);
   return (
     <>
-      <Navbar setIsAuth={setIsAuth} />
+      <Navbar setIsAuth={setIsAuth} isAuth={isAuth} />
       <Routes>
         <Route
           path="/"

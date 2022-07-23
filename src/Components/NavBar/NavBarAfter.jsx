@@ -17,6 +17,11 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
+import { GiTwoCoins } from "react-icons/gi";
+import { TbCoin } from "react-icons/tb";
+import { MdOutlineAccountBalanceWallet, MdVerifiedUser } from "react-icons/md";
+import { BiCar } from "react-icons/bi";
+import { RiLogoutBoxRLine } from "react-icons/ri";
 import logoHomePage from "../../Assets/logoHomePage.png";
 import { FaUser, FaRegCopy, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
@@ -24,8 +29,6 @@ import { Link, useNavigate } from "react-router-dom";
 export default function NavBarAfter({ userName, userCity, handleLogout }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const navigate = useNavigate();
-
-  console.log(userName);
 
   return (
     <>
@@ -57,6 +60,37 @@ export default function NavBarAfter({ userName, userCity, handleLogout }) {
                     </Flex>
                   </DrawerHeader>
                   <DrawerBody>
+                    <Flex alignItems={"center"} gap="10px" height={"50px"}>
+                      <GiTwoCoins size={"22"} color="black" />
+                      <Text fontSize="16px" cursor="pointer">
+                        Credits
+                      </Text>
+                    </Flex>
+                    <Flex alignItems={"center"} gap="10px" height={"50px"}>
+                      <TbCoin size={"22"} />
+                      <Text fontSize="16px" cursor="pointer">
+                        Z-POINTS
+                      </Text>
+                    </Flex>
+                    <Flex alignItems={"center"} gap="10px" height={"50px"}>
+                      <MdOutlineAccountBalanceWallet size={"22"} />
+                      <Text fontSize="16px" cursor="pointer">
+                        Paytm wallet
+                      </Text>
+                    </Flex>
+                    <hr color="gray"></hr>
+                    <Flex alignItems={"center"} gap="10px" height={"50px"}>
+                      <BiCar size={"22"} />
+                      <Text fontSize="16px" cursor="pointer">
+                        My Trips
+                      </Text>
+                    </Flex>
+                    <Flex alignItems={"center"} gap="10px" height={"50px"}>
+                      <MdVerifiedUser size={"22"} />
+                      <Text fontSize="16px" cursor="pointer">
+                        Profile Verification
+                      </Text>
+                    </Flex>
                     <Flex
                       alignItems={"center"}
                       height={"50px"}
@@ -85,21 +119,35 @@ export default function NavBarAfter({ userName, userCity, handleLogout }) {
                         {userCity[0]?.city}
                       </Text>
                     </Flex>
+                    <hr color="gray"></hr>
                     <Flex alignItems={"center"} gap="10px" height={"50px"}>
                       <FaRegCopy size={"22"} />
-                      <Text fontSize="16px">
+                      <Text fontSize="16px" cursor="pointer">
                         Zoomcar Fleet Vehicles Policies
                       </Text>
                     </Flex>
                     <Flex alignItems={"center"} gap="10px" height={"50px"}>
                       <FaRegCopy size={"22"} />
-                      <Text fontSize="16px">
+                      <Text fontSize="16px" cursor="pointer">
                         Zoomcar Host Vehicles Policies
                       </Text>
                     </Flex>
                     <Flex alignItems={"center"} gap="10px" height={"50px"}>
                       <FaPhone size={"22"} />
-                      <Text fontSize="16px">Help & Support</Text>
+                      <Text fontSize="16px" cursor="pointer">
+                        Help & Support
+                      </Text>
+                    </Flex>
+                    <hr color="gray"></hr>
+                    <Flex alignItems={"center"} gap="10px" height={"50px"}>
+                      <RiLogoutBoxRLine size={"22"} />
+                      <Text
+                        fontSize="16px"
+                        onClick={handleLogout}
+                        cursor="pointer"
+                      >
+                        Logout
+                      </Text>
                     </Flex>
                   </DrawerBody>
                 </DrawerContent>
