@@ -31,166 +31,195 @@ export default function NavBarAfter({ userName, userCity, handleLogout }) {
   const navigate = useNavigate();
 
   return (
-    <>
-      <Box bg={"black"} color={"white"} px={4}>
-        <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-          <Flex gap={"15px"} alignItems="center" direction="row">
-            <Box>
-              <HamburgerIcon
-                w={6}
-                h={5}
-                color="white.500"
-                onClick={onOpen}
-                cursor="pointer"
-              >
-                Open
-              </HamburgerIcon>
-              <Drawer
-                placement="left"
-                onClose={onClose}
-                isOpen={isOpen}
-                size="sm"
-              >
-                <DrawerOverlay />
-                <DrawerContent bg={"white"} color={"gray.700"}>
-                  <DrawerHeader borderBottomWidth="1px" bg={"gray.300"}>
-                    <Flex alignItems={"center"} gap="10px">
-                      <FaUser size={"18px"} />
-                      <Text fontSize="16px">{userName.name}</Text>
-                    </Flex>
-                  </DrawerHeader>
-                  <DrawerBody>
+    <Box bg={"black"} color={"white"} px={4}>
+      <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
+        <Flex gap={"15px"} alignItems="center" direction="row">
+          <Box>
+            <HamburgerIcon
+              w={6}
+              h={5}
+              color="white.500"
+              onClick={onOpen}
+              cursor="pointer"
+            >
+              Open
+            </HamburgerIcon>
+            <Drawer
+              placement="left"
+              onClose={onClose}
+              isOpen={isOpen}
+              size="sm"
+            >
+              <DrawerOverlay />
+              <DrawerContent bg={"white"} color={"gray.700"}>
+                <DrawerHeader borderBottomWidth="1px" bg="black" color="white">
+                  <Flex alignItems={"center"} gap="20px">
+                    <FaUser size={"25px"} />
+                    <Box>
+                      <Text fontSize="18px">{userName.name}</Text>
+                      <Text fontSize="12px" color="gray.300">
+                        {userName.email}
+                      </Text>
+                      <Text fontSize="12px" color="gray.300">
+                        {userName.phone}
+                      </Text>
+                    </Box>
+                  </Flex>
+                </DrawerHeader>
+                <DrawerBody>
+                  <Flex
+                    alignItems="center"
+                    height="50px"
+                    justifyContent="space-between"
+                  >
                     <Flex alignItems={"center"} gap="10px" height={"50px"}>
                       <GiTwoCoins size={"22"} color="black" />
                       <Text fontSize="16px" cursor="pointer">
                         Credits
                       </Text>
                     </Flex>
+                    <Text fontWeight="600" fontSize="16px" color="green.500">
+                      {0}
+                    </Text>
+                  </Flex>
+                  <Flex
+                    alignItems="center"
+                    height="50px"
+                    justifyContent="space-between"
+                  >
                     <Flex alignItems={"center"} gap="10px" height={"50px"}>
                       <TbCoin size={"22"} />
                       <Text fontSize="16px" cursor="pointer">
                         Z-POINTS
                       </Text>
                     </Flex>
+                    <Text fontWeight="600" fontSize="16px" color="green.500">
+                      {320}
+                    </Text>
+                  </Flex>
+                  <Flex
+                    alignItems="center"
+                    height="50px"
+                    justifyContent="space-between"
+                  >
                     <Flex alignItems={"center"} gap="10px" height={"50px"}>
                       <MdOutlineAccountBalanceWallet size={"22"} />
                       <Text fontSize="16px" cursor="pointer">
                         Paytm wallet
                       </Text>
                     </Flex>
-                    <hr color="gray"></hr>
+                    <Text fontWeight="600" fontSize="16px" color="green.500">
+                      {"Link Wallet"}
+                    </Text>
+                  </Flex>
+                  <hr color="gray"></hr>
+                  <Flex alignItems={"center"} gap="10px" height={"50px"}>
+                    <BiCar size={"22"} />
+                    <Text fontSize="16px" cursor="pointer">
+                      My Trips
+                    </Text>
+                  </Flex>
+                  <Flex alignItems={"center"} gap="10px" height={"50px"}>
+                    <MdVerifiedUser size={"22"} />
+                    <Text fontSize="16px" cursor="pointer">
+                      Profile Verification
+                    </Text>
+                  </Flex>
+                  <Flex
+                    alignItems="center"
+                    height="50px"
+                    justifyContent="space-between"
+                  >
                     <Flex alignItems={"center"} gap="10px" height={"50px"}>
-                      <BiCar size={"22"} />
-                      <Text fontSize="16px" cursor="pointer">
-                        My Trips
+                      <FaMapMarkerAlt size={"22"} />
+                      <Text fontSize="16px">
+                        <Link
+                          to={"/location"}
+                          style={{
+                            textDecoration: "none",
+                            border: "none",
+                            backgroundColor: "white",
+                          }}
+                        >
+                          Change City
+                        </Link>
                       </Text>
                     </Flex>
-                    <Flex alignItems={"center"} gap="10px" height={"50px"}>
-                      <MdVerifiedUser size={"22"} />
-                      <Text fontSize="16px" cursor="pointer">
-                        Profile Verification
-                      </Text>
-                    </Flex>
-                    <Flex
-                      alignItems={"center"}
-                      height={"50px"}
-                      justifyContent="space-between"
+                    <Text fontWeight="600" fontSize="16px" color="green.500">
+                      {userCity[0]?.city}
+                    </Text>
+                  </Flex>
+                  <hr color="gray"></hr>
+                  <Flex alignItems={"center"} gap="10px" height={"50px"}>
+                    <FaRegCopy size={"22"} />
+                    <Text fontSize="16px" cursor="pointer">
+                      Zoomcar Fleet Vehicles Policies
+                    </Text>
+                  </Flex>
+                  <Flex alignItems={"center"} gap="10px" height={"50px"}>
+                    <FaRegCopy size={"22"} />
+                    <Text fontSize="16px" cursor="pointer">
+                      Zoomcar Host Vehicles Policies
+                    </Text>
+                  </Flex>
+                  <Flex alignItems={"center"} gap="10px" height={"50px"}>
+                    <FaPhone size={"22"} />
+                    <Text fontSize="16px" cursor="pointer">
+                      Help & Support
+                    </Text>
+                  </Flex>
+                  <hr color="gray"></hr>
+                  <Flex alignItems={"center"} gap="10px" height={"50px"}>
+                    <RiLogoutBoxRLine size={"22"} />
+                    <Text
+                      fontSize="16px"
+                      onClick={handleLogout}
+                      cursor="pointer"
                     >
-                      <Flex alignItems={"center"} gap="10px" height={"50px"}>
-                        <FaMapMarkerAlt size={"22"} />
-                        <Text fontSize="16px">
-                          <Link
-                            to={"/location"}
-                            style={{
-                              textDecoration: "none",
-                              border: "none",
-                              backgroundColor: "white",
-                            }}
-                          >
-                            Change City
-                          </Link>
-                        </Text>
-                      </Flex>
-                      <Text
-                        fontWeight={"600"}
-                        fontSize="16px"
-                        color={"green.500"}
-                      >
-                        {userCity[0]?.city}
-                      </Text>
-                    </Flex>
-                    <hr color="gray"></hr>
-                    <Flex alignItems={"center"} gap="10px" height={"50px"}>
-                      <FaRegCopy size={"22"} />
-                      <Text fontSize="16px" cursor="pointer">
-                        Zoomcar Fleet Vehicles Policies
-                      </Text>
-                    </Flex>
-                    <Flex alignItems={"center"} gap="10px" height={"50px"}>
-                      <FaRegCopy size={"22"} />
-                      <Text fontSize="16px" cursor="pointer">
-                        Zoomcar Host Vehicles Policies
-                      </Text>
-                    </Flex>
-                    <Flex alignItems={"center"} gap="10px" height={"50px"}>
-                      <FaPhone size={"22"} />
-                      <Text fontSize="16px" cursor="pointer">
-                        Help & Support
-                      </Text>
-                    </Flex>
-                    <hr color="gray"></hr>
-                    <Flex alignItems={"center"} gap="10px" height={"50px"}>
-                      <RiLogoutBoxRLine size={"22"} />
-                      <Text
-                        fontSize="16px"
-                        onClick={handleLogout}
-                        cursor="pointer"
-                      >
-                        Logout
-                      </Text>
-                    </Flex>
-                  </DrawerBody>
-                </DrawerContent>
-              </Drawer>
-            </Box>
-            <Image
-              src={logoHomePage}
-              cursor="pointer"
-              onClick={() => navigate("/")}
-            />
-          </Flex>
-          <Flex
-            minWidth={"350px"}
-            alignItems={"center"}
-            justifyContent={"space-between"}
-            direction={"row"}
-            className="navBarRightSide"
-          >
-            <Text fontWeight={"600"} fontSize="18px">
-              <Link to="/hosts">Become a Host</Link>
-            </Text>
-            <Text fontWeight={"600"} fontSize="18px">
-              <Link to="/zms">ZMS</Link>
-            </Text>
-            <Menu>
-              <MenuButton
-                as={Button}
-                rounded={"full"}
-                variant={"link"}
-                cursor={"pointer"}
-                minW={0}
-              >
-                <Text fontWeight={"600"} fontSize="20px">
-                  {userName.name}
-                </Text>
-              </MenuButton>
-              <MenuList alignItems={"center"}>
-                <MenuItem onClick={handleLogout}>Logout</MenuItem>
-              </MenuList>
-            </Menu>
-          </Flex>
+                      Logout
+                    </Text>
+                  </Flex>
+                </DrawerBody>
+              </DrawerContent>
+            </Drawer>
+          </Box>
+          <Image
+            src={logoHomePage}
+            cursor="pointer"
+            onClick={() => navigate("/")}
+          />
         </Flex>
-      </Box>
-    </>
+        <Flex
+          minWidth={"350px"}
+          alignItems={"center"}
+          justifyContent={"space-between"}
+          direction={"row"}
+          className="navBarRightSide"
+        >
+          <Text fontWeight={"600"} fontSize="18px">
+            <Link to="/hosts">Become a Host</Link>
+          </Text>
+          <Text fontWeight={"600"} fontSize="18px">
+            <Link to="/zms">ZMS</Link>
+          </Text>
+          <Menu>
+            <MenuButton
+              as={Button}
+              rounded={"full"}
+              variant={"link"}
+              cursor={"pointer"}
+              minW={0}
+            >
+              <Text fontWeight={"600"} fontSize="20px">
+                {userName.name}
+              </Text>
+            </MenuButton>
+            <MenuList alignItems={"center"}>
+              <MenuItem onClick={handleLogout}>Logout</MenuItem>
+            </MenuList>
+          </Menu>
+        </Flex>
+      </Flex>
+    </Box>
   );
 }
