@@ -2,9 +2,10 @@ import React from "react";
 import { Box, Text, Image, Button } from "@chakra-ui/react";
 import { useSelector } from "react-redux";
 import { ArrowBackIcon, StarIcon } from "@chakra-ui/icons";
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, useNavigate } from "react-router-dom";
 
 export const CheckoutPage = () => {
+  const navigate = useNavigate();
   const filterData = useSelector((state) => state.AppReducer.filterData);
 
   return (
@@ -47,8 +48,13 @@ export const CheckoutPage = () => {
           marginLeft={"0.8%"}
           marginTop={"0.5%"}
         >
-          <Image src={filterData.image} mt={{base:'0', lg:'-2'}}
-    objectFit='cover' width={{base:"100%",md:"80",lg:"60%"}} height={{base:"70%",md:"80%",lg:"100%"}} ></Image>
+          <Image
+            src={filterData.image}
+            mt={{ base: "0", lg: "-2" }}
+            objectFit="cover"
+            width={{ base: "100%", md: "80", lg: "60%" }}
+            height={{ base: "70%", md: "80%", lg: "100%" }}
+          ></Image>
         </Box>
         {/* total div */}
       </Box>
@@ -127,6 +133,7 @@ export const CheckoutPage = () => {
             height={"60px"}
             bg={"green"}
             color={"white"}
+            onClick={() => navigate("/payment_options")}
           >
             Checkout Summary
           </Button>
