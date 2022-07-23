@@ -58,7 +58,7 @@ const Login = () => {
 
   return (
     <div>
-      <Container maxW="550px" color="white" h="auto">
+      <Container maxW="550px" color="white" h="100vh">
         <Image
           boxSize="sm"
           m="auto"
@@ -69,8 +69,13 @@ const Login = () => {
           Enter details to Log-in
         </Heading>
         <InputGroup m="20px auto">
-          <InputLeftAddon children="Email" bg="black" />
+          <InputLeftAddon
+            children="Email"
+            bg="black"
+            boxShadow="0px 0px 0px 1px black"
+          />
           <Input
+            boxShadow="0px 0px 0px 1px black"
             type="email"
             color={"black"}
             placeholder="@gmail.com"
@@ -78,7 +83,12 @@ const Login = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
         </InputGroup>
-        <InputGroup size="md" m="20px auto">
+        <InputGroup
+          size="md"
+          m="20px auto"
+          boxShadow="0px 0px 0px 1px black"
+          borderRadius="5px"
+        >
           <Input
             pr="4.5rem"
             type={show ? "text" : "password"}
@@ -101,24 +111,6 @@ const Login = () => {
         >
           Continue
         </Button>
-        <Heading as="h5" size="sm" color="rgb(16,163,16)">
-          Continue with
-        </Heading>
-        <Flex justifyContent={"center"} gap="20px" m="20px auto">
-          {/* <GoogleLogin
-            clientId={clientId}
-            buttonText="Login"
-            onSuccess={onSuccess}
-            onFailure={onFailure}
-            cookiePolicy={"single_host_origin"}
-            isSignedIn={true}
-          />
-          <GoogleLogout
-            clientId={clientId}
-            buttonText={"Logout"}
-            onLogoutSuccess={onSuccesslogout}
-          /> */}
-        </Flex>
       </Container>
     </div>
   );

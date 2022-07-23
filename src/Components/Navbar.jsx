@@ -24,26 +24,37 @@ import logoHomePage from "../Assets/logoHomePage.png";
 import { FaUser, FaRegCopy, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserLocation } from "../Redux/LocationReducer/action";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
+  const navigate = useNavigate();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const dispatch = useDispatch();
   const userCity = useSelector((state) => state.LocationReducer.currLocation);
-  // get this using useSelector
   const [isAuth, setIsAuth] = useState(false);
+  const [userName, setUserName] = useState("");
 
-  // console.log(userCity);
+  console.log(userName);
+
+  const handlesubmit = () => {
+    const loginobj = { name: "", email: "", phone: "", password: "" };
+    localStorage.setItem("Logininfo", JSON.stringify(loginobj));
+    navigate("/Login", { replace: true });
+  };
 
   useEffect(() => {
     dispatch(getUserLocation());
+    const items = JSON.parse(localStorage.getItem("Logininfo"));
+    if (items) {
+      setUserName(items);
+    }
   }, [dispatch]);
 
   return (
     <>
       <Box bg={"black"} color={"white"} px={4}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-          <Flex gap={"15px"} alignItems={"center"}>
+          <Flex gap={"15px"} alignItems="center" direction="row">
             <Box>
               <HamburgerIcon w={6} h={5} color="white.500" onClick={onOpen}>
                 Open
@@ -57,10 +68,10 @@ export default function Navbar() {
                 <DrawerOverlay />
                 <DrawerContent bg={"white"} color={"gray.700"}>
                   <DrawerHeader borderBottomWidth="1px" bg={"gray.300"}>
-                    {isAuth ? (
+                    {userName.name ? (
                       <Flex alignItems={"center"} gap="10px">
                         <FaUser size={"18px"} />
-                        <Text fontSize="16px">Login or Signup</Text>
+                        <Text fontSize="16px">{userName.name}</Text>
                       </Flex>
                     ) : (
                       <Flex alignItems={"center"} gap="10px">
@@ -142,13 +153,13 @@ export default function Navbar() {
                 cursor={"pointer"}
                 minW={0}
               >
-                {isAuth ? (
-                  <Text fontWeight={"700"} fontSize="20px">
-                    ZMS
+                {userName.name ? (
+                  <Text fontWeight={"600"} fontSize="20px">
+                    {userName.name}
                   </Text>
                 ) : (
-                  <Text fontWeight={"700"} fontSize="20px">
-                    Username
+                  <Text fontWeight={"600"} fontSize="20px">
+                    Login/SignUp
                   </Text>
                 )}
               </MenuButton>
@@ -166,9 +177,7 @@ export default function Navbar() {
                 </Center>
                 <br />
                 <MenuDivider />
-                <MenuItem>Your Servers</MenuItem>
-                <MenuItem>Account Settings</MenuItem>
-                <MenuItem>Logout</MenuItem>
+                <MenuItem onClick={handlesubmit}>Logout</MenuItem>
               </MenuList>
             </Menu>
           </Flex>

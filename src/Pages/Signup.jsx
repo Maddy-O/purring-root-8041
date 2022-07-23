@@ -1,7 +1,5 @@
 import React from "react";
-// import { GoogleLogin, GoogleLogout } from "react-google-login";
-// import { gapi } from "gapi-script";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   Image,
   Container,
@@ -11,7 +9,6 @@ import {
   InputLeftAddon,
   InputRightElement,
   Button,
-  Flex,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 
@@ -19,6 +16,7 @@ const clientId =
   "179149206343-n07ms4tjd5pgo0d64v9f8e89u6avnckr.apps.googleusercontent.com";
 
 const Signup = () => {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [show, setShow] = React.useState(false);
@@ -27,35 +25,15 @@ const Signup = () => {
 
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   function start() {
-  //     gapi.client.init({
-  //       clientId: clientId,
-  //       scope: "",
-  //     });
-  //   }
-  //   gapi.load("client:auth2", start);
-  // });
-
-  const onFailure = (res) => {
-    console.log("Login success! Current User", res.profileObj);
-  };
-  const onSuccess = (res) => {
-    console.log("Login Failed", res);
-  };
-  const onSuccesslogout = () => {
-    console.log("logout succesful");
-  };
-
   const handlesubmit = () => {
-    const loginobj = { email, phone, password };
+    const loginobj = { name, email, phone, password };
     localStorage.setItem("Logininfo", JSON.stringify(loginobj));
     navigate("/Login", { replace: true });
   };
 
   return (
     <div>
-      <Container maxW="550px" color="white" h="auto">
+      <Container maxW="550px" color="white" h="100vh">
         <Image
           boxSize="sm"
           m="auto"
@@ -66,8 +44,28 @@ const Signup = () => {
           Enter details to Sign-up
         </Heading>
         <InputGroup m="20px auto">
-          <InputLeftAddon children="+91" bg="black" />
+          <InputLeftAddon
+            children="name"
+            bg="black"
+            boxShadow="0px 0px 0px 1px black"
+          />
           <Input
+            boxShadow="0px 0px 0px 1px black"
+            type="text"
+            placeholder="name"
+            color={"black"}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </InputGroup>
+        <InputGroup m="20px auto">
+          <InputLeftAddon
+            children="+91"
+            bg="black"
+            boxShadow="0px 0px 0px 1px black"
+          />
+          <Input
+            boxShadow="0px 0px 0px 1px black"
             type="tel"
             placeholder="phone number"
             color={"black"}
@@ -76,8 +74,13 @@ const Signup = () => {
           />
         </InputGroup>
         <InputGroup m="20px auto">
-          <InputLeftAddon children="Email" bg="black" />
+          <InputLeftAddon
+            children="Email"
+            bg="black"
+            boxShadow="0px 0px 0px 1px black"
+          />
           <Input
+            boxShadow="0px 0px 0px 1px black"
             type="email"
             color={"black"}
             placeholder="@gmail.com"
@@ -85,7 +88,12 @@ const Signup = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
         </InputGroup>
-        <InputGroup size="md" m="20px auto">
+        <InputGroup
+          size="md"
+          m="20px auto"
+          boxShadow="0px 0px 0px 1px black"
+          borderRadius="5px"
+        >
           <Input
             pr="4.5rem"
             type={show ? "text" : "password"}
@@ -111,21 +119,6 @@ const Signup = () => {
         <Heading as="h5" size="sm" color="rgb(16,163,16)">
           Continue with
         </Heading>
-        <Flex justifyContent={"center"} gap="20px" m="20px auto">
-          {/* <GoogleLogin
-            clientId={clientId}
-            buttonText="Login"
-            onSuccess={onSuccess}
-            onFailure={onFailure}
-            cookiePolicy={"single_host_origin"}
-            isSignedIn={true}
-          />
-          <GoogleLogout
-            clientId={clientId}
-            buttonText={"Logout"}
-            onLogoutSuccess={onSuccesslogout}
-          /> */}
-        </Flex>
       </Container>
     </div>
   );
