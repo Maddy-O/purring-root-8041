@@ -77,7 +77,7 @@ const Login = ({ setIsAuth }) => {
         </InputRightElement>
       </InputGroup>
       <Button
-        w="lg"
+        w="100%"
         bg="rgb(16,163,16)"
         m="5px auto 20px 0px"
         onClick={handlesubmit}

@@ -27,7 +27,7 @@ export default function NavBarBefore({ userCity, handleLogin }) {
 
   return (
     <>
-      <Box bg={"black"} color={"white"} px={4}>
+      <Box bg={"black"} color={"white"} px={4} width="100%">
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <Flex gap={"15px"} alignItems="center" direction="row">
             <Box>
@@ -56,8 +56,8 @@ export default function NavBarBefore({ userCity, handleLogin }) {
                   </DrawerHeader>
                   <DrawerBody>
                     <Flex
-                      alignItems={"center"}
-                      height={"50px"}
+                      alignItems="center"
+                      height="50px"
                       justifyContent="space-between"
                     >
                       <Flex alignItems={"center"} gap="10px" height={"50px"}>
@@ -104,6 +104,7 @@ export default function NavBarBefore({ userCity, handleLogin }) {
               </Drawer>
             </Box>
             <Image
+              width="60%"
               src={logoHomePage}
               cursor="pointer"
               onClick={() => navigate("/")}
@@ -111,16 +112,16 @@ export default function NavBarBefore({ userCity, handleLogin }) {
           </Flex>
 
           <Flex
-            minWidth={"350px"}
-            alignItems={"center"}
-            justifyContent={"space-between"}
-            direction={"row"}
-            className="navBarRightSide"
+            minWidth="350px"
+            alignItems="center"
+            justifyContent="space-between"
+            direction="row"
+            width="40%"
           >
-            <Text fontWeight={"600"} fontSize="18px">
+            <Text fontWeight={"600"} fontSize="auto">
               <Link to="/hosts">Become a Host</Link>
             </Text>
-            <Text fontWeight={"600"} fontSize="18px">
+            <Text fontWeight={"600"} fontSize="auto">
               <Link to="/zms">ZMS</Link>
             </Text>
             <Menu>
@@ -131,7 +132,7 @@ export default function NavBarBefore({ userCity, handleLogin }) {
                 cursor={"pointer"}
                 minW={0}
               >
-                <Text fontWeight={"600"} fontSize="20px" color="white">
+                <Text fontWeight={"600"} fontSize="auto" color="white">
                   Login/SignUp
                 </Text>
               </MenuButton>
