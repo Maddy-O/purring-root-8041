@@ -1,15 +1,13 @@
-import { Box, Container } from "@chakra-ui/react";
-import React, { useEffect, useState } from "react";
+import { Box, Button } from "@chakra-ui/react";
+import React, { useState } from "react";
 import { DateRangePicker } from "react-date-range";
 import { addDays } from "date-fns";
-import { ThemeProvider } from "styled-components";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
+import { useNavigate } from "react-router-dom";
 
-const DateTime = () => {
-  let handleSelect = (date) => {
-    console.log(date); // Momentjs object
-  };
+const DateTime = ({ setDateData }) => {
+  const navigate = useNavigate();
   const [state, setState] = useState([
     {
       startDate: new Date(),
@@ -17,22 +15,20 @@ const DateTime = () => {
       key: "selection",
     },
   ]);
+  let handleSelect = (date) => {
+    let startDate = String(date[0]?.startDate);
+    let endDate = String(date[0]?.endDate);
+    let bag1 = "";
+    let bag2 = "";
+    for (let i = 0; i < 16; i++) {
+      bag1 += startDate[i];
+      bag2 += endDate[i];
+    }
+    setDateData({ startDate: bag1, endDate: bag2 });
+    navigate("/");
+  };
 
-  // const [state, setState] = useState([]);
-
-  // useEffect(() => {
-  //   if (state.length === 0) {
-  //     setState([
-  //       {
-  //         startDate: new Date(),
-  //         endDate: addDays(new Date(), 7),
-  //         key: "selection",
-  //       },
-  //     ]);
-  //   }
-  // }, [state, setState]);
   return (
-    // <ThemeProvider>
     <Box height={"100vh"} backgroundColor="white" color={"black"}>
       <DateRangePicker
         onChange={(item) => setState([item.selection])}
@@ -44,19 +40,10 @@ const DateTime = () => {
         preventSnapRefocus={true}
         calendarFocus="backwards"
       />
+      <Button backgroundColor="#e0e0e0" onClick={() => handleSelect(state)}>
+        Done
+      </Button>
     </Box>
-    // </ThemeProvider>
-    // <div key={JSON.stringify(state)}>
-    //   <h1>Hello</h1>
-    //   <DateRangePicker
-    //     onChange={(item) => setState([item.selection])}
-    //     showSelectionPreview={true}
-    //     moveRangeOnFirstSelection={false}
-    //     months={2}
-    //     ranges={state}
-    //     direction="horizontal"
-    //   />
-    // </div>
   );
 };
 

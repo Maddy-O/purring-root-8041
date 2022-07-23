@@ -21,12 +21,11 @@ import referFriends from "../Assets/referFriends.png";
 import trip from "../Assets/trip.png";
 import securityDeposit from "../Assets/securityDeposit.jpeg";
 
-
-const HomePage = () => {
+const HomePage = ({ point, dateData }) => {
   return (
     <>
       <Navbar />
-      <PickUpComponent />
+      <PickUpComponent point={point} dateData={dateData} />
       <Box>
         <Flex justifyContent={"center"} m="20px 0px" flexWrap="wrap">
           <Image

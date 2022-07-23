@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { getCar,getCarId} from "../Redux/AppReducer/action";
+import { getCar, getCarId } from "../Redux/AppReducer/action";
 
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
@@ -13,66 +13,56 @@ export const FilterPage = () => {
   //  console.log(filterdataa,"jjj")
 
   const [metaa, setMet] = useState([]);
-  const[idd,setIdd]=useState(0);
+  const [idd, setIdd] = useState(0);
   const dispatch = useDispatch();
   // console.log(idd,"iddd");
-  const navigate=useNavigate();
-  
+  const navigate = useNavigate();
 
   const handleFilter = (e) => {
-  
     const datatoset = data.filter((ele) => ele.Seat == e.target.value);
-  
+
     setMet(datatoset);
   };
 
- const handleCarTypes=(e)=>{
-  const datatoset=data.filter((ele)=>ele.CarType == e.target.value)
-  // console.log(datatoset)
-  setMet(datatoset)
- };
+  const handleCarTypes = (e) => {
+    const datatoset = data.filter((ele) => ele.CarType == e.target.value);
+    // console.log(datatoset)
+    setMet(datatoset);
+  };
 
- const handleTransmission=(e)=>{
-  const datatoset=data.filter((ele)=>ele.Transmision == e.target.value)
-  // console.log(datatoset)
-  setMet(datatoset)
- }
- const handleDelivery=(e)=>{
-  const datatoset=data.filter((ele)=>ele.DeliveryType == e.target.value)
-  // console.log(datatoset)
-  setMet(datatoset)
- }
+  const handleTransmission = (e) => {
+    const datatoset = data.filter((ele) => ele.Transmision == e.target.value);
+    // console.log(datatoset)
+    setMet(datatoset);
+  };
+  const handleDelivery = (e) => {
+    const datatoset = data.filter((ele) => ele.DeliveryType == e.target.value);
+    // console.log(datatoset)
+    setMet(datatoset);
+  };
 
- const handelId=(e)=>{
-   setIdd(e.target.value);
+  const handelId = (e) => {
+    setIdd(e.target.value);
+  };
 
- 
-  }
-    
-
-
-
- 
-
-  useEffect(()=>{
-      setMet(data)
-  },[setMet,data.length])
+  useEffect(() => {
+    setMet(data);
+  }, [setMet, data.length]);
 
   useEffect(() => {
     dispatch(getCar());
-  }, [data.length,dispatch,metaa]);
+  }, [data.length, dispatch, metaa]);
 
- useEffect(()=>{
-  if(idd!==0)
-  {
-  const payload={
-    idd:idd
-  }
-    dispatch(getCarId(payload));
-    navigate("checkoutpage")
-    // <Navigate to="/checkoutpage" replace={true}/>
-}
- },[dispatch,idd])
+  useEffect(() => {
+    if (idd !== 0) {
+      const payload = {
+        idd: idd,
+      };
+      dispatch(getCarId(payload));
+      navigate("checkoutpage");
+      // <Navigate to="/checkoutpage" replace={true}/>
+    }
+  }, [dispatch, idd]);
 
   return (
     <Box
@@ -82,7 +72,6 @@ export const FilterPage = () => {
       display={"flex"}
     >
       <Box
-  
         width={"27%"}
         height={"100%"}
         border={"1px solid none"}
@@ -91,97 +80,115 @@ export const FilterPage = () => {
       >
         <Box width={"100%"} height={"100px"} border={"1px solid none"}>
           <Text fontSize={"20px"}>SEATS</Text>
-              <Button
-                value={5}
-                bg={"light-grey"} border={"1px solid grey"}
-                 width={"30%"}
-                onClick={(e) => handleFilter(e)}
-                cursor="pointer" 
-              >
-                5
-              </Button>
-              <Button value={6} 
-                bg={"light-grey"} border={"1px solid grey"}
-               width={"30%"}
-              onClick={(e) => handleFilter(e)}>
-                6
-              </Button>
-              <Button value={7} 
-                bg={"light-grey"} border={"1px solid grey"}
-                width={"33%"}
-              onClick={(e) => handleFilter(e)}>
-                7
-              </Button>
+          <Button
+            value={5}
+            bg={"light-grey"}
+            border={"1px solid grey"}
+            width={"30%"}
+            onClick={(e) => handleFilter(e)}
+            cursor="pointer"
+          >
+            5
+          </Button>
+          <Button
+            value={6}
+            bg={"light-grey"}
+            border={"1px solid grey"}
+            width={"30%"}
+            onClick={(e) => handleFilter(e)}
+          >
+            6
+          </Button>
+          <Button
+            value={7}
+            bg={"light-grey"}
+            border={"1px solid grey"}
+            width={"33%"}
+            onClick={(e) => handleFilter(e)}
+          >
+            7
+          </Button>
         </Box>
 
         {/* car Types */}
         <Box width={"100%"} height={"100px"} border={"1px solid none"}>
           <Text fontSize={"20px"}>CAR TYPES</Text>
-              <Button
-                value={"SUV"}
-                bg={"light-grey"} border={"1px solid grey"}
-                 width={"30%"}
-                onClick={(e) => handleCarTypes(e)}
-                cursor="pointer" 
-              >
-                SUV
-              </Button>
-              <Button value={"sedan"} 
-                bg={"light-grey"} border={"1px solid grey"}
-               width={"30%"}
-              onClick={(e) => handleCarTypes(e)}>
-                Sedan
-              </Button>
-              <Button value={"hatchback"} 
-                bg={"light-grey"} border={"1px solid grey"}
-                width={"33%"}
-              onClick={(e) => handleCarTypes(e)}>
-                hatchback
-              </Button>
+          <Button
+            value={"SUV"}
+            bg={"light-grey"}
+            border={"1px solid grey"}
+            width={"30%"}
+            onClick={(e) => handleCarTypes(e)}
+            cursor="pointer"
+          >
+            SUV
+          </Button>
+          <Button
+            value={"sedan"}
+            bg={"light-grey"}
+            border={"1px solid grey"}
+            width={"30%"}
+            onClick={(e) => handleCarTypes(e)}
+          >
+            Sedan
+          </Button>
+          <Button
+            value={"hatchback"}
+            bg={"light-grey"}
+            border={"1px solid grey"}
+            width={"33%"}
+            onClick={(e) => handleCarTypes(e)}
+          >
+            hatchback
+          </Button>
         </Box>
         {/* Transmission */}
-                
-        <Box width={"100%"} height={"100px"} border={"1px solid none"} >
+
+        <Box width={"100%"} height={"100px"} border={"1px solid none"}>
           <Text fontSize={"20px"}>TRANSMISSION</Text>
-              <Button
-                value={"Manual"}
-                bg={"light-grey"} border={"1px solid grey"}
-                 width={"30%"}
-                onClick={(e) => handleTransmission(e)}
-                cursor="pointer" 
-              >
-                Manual
-              </Button>
-              <Button value={"Automatic"} 
-                bg={"light-grey"} border={"1px solid grey"}
-               width={"30%"}
-              onClick={(e) => handleTransmission(e)}>
-                Automatic
-              </Button>
-              
+          <Button
+            value={"Manual"}
+            bg={"light-grey"}
+            border={"1px solid grey"}
+            width={"30%"}
+            onClick={(e) => handleTransmission(e)}
+            cursor="pointer"
+          >
+            Manual
+          </Button>
+          <Button
+            value={"Automatic"}
+            bg={"light-grey"}
+            border={"1px solid grey"}
+            width={"30%"}
+            onClick={(e) => handleTransmission(e)}
+          >
+            Automatic
+          </Button>
         </Box>
         {/* Delivery div */}
         <Box width={"100%"} height={"100px"} border={"1px solid none"}>
           <Text fontSize={"20px"}>DELIVERY TYPE</Text>
-              <Button
-                value={"Home Delivery"}
-                bg={"light-grey"} border={"1px solid grey"}
-                 width={"30%"}
-                onClick={(e) => handleDelivery(e)}
-                cursor="pointer" 
-              >
-               Home
-              </Button>
-              <Button value={"Airport Delivery"} 
-                bg={"light-grey"} border={"1px solid grey"}
-               width={"30%"}
-              onClick={(e) => handleDelivery(e)}>
-                Airport 
-              </Button>
-              
+          <Button
+            value={"Home Delivery"}
+            bg={"light-grey"}
+            border={"1px solid grey"}
+            width={"30%"}
+            onClick={(e) => handleDelivery(e)}
+            cursor="pointer"
+          >
+            Home
+          </Button>
+          <Button
+            value={"Airport Delivery"}
+            bg={"light-grey"}
+            border={"1px solid grey"}
+            width={"30%"}
+            onClick={(e) => handleDelivery(e)}
+          >
+            Airport
+          </Button>
         </Box>
-       
-        
       </Box>
 
       {/* MAIN DIV */}
@@ -248,8 +255,7 @@ export const FilterPage = () => {
                   border={"1px solid green"}
                   background={"transparent"}
                   marginTop={"1%"}
-                  onClick={(e)=>handelId(e)}
-                  
+                  onClick={(e) => handelId(e)}
                 >
                   Book Now
                 </Button>
