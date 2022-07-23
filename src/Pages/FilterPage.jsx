@@ -67,7 +67,7 @@ export const FilterPage = () => {
   return (
     <Box
       width={"100"}
-      height={"400px"}
+      height={["500px,550px,400px"]}
       border={"1px solid transparent"}
       display={"flex"}
     >
