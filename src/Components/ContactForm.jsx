@@ -44,7 +44,7 @@ const ContactForm = () => {
           placeholder="Mention Requirements"
         />
 
-        <Button mt="8" width="25%" color="white" bg="rgb(16,163,16)">
+        <Button mt="8" width="25%" color="white" bg="rgb(16,163,16)" onClick={()=> alert("Our Representative Will Contact You in 24 hrs")}>
           Submit
         </Button>
       </FormControl>
