@@ -34,7 +34,7 @@ const getFailId = () => {
 
   dispatch(getReq());
   axios
-    .get("http://localhost:8080/zoomcar", params)
+    .get("https://enigmatic-stream-23835.herokuapp.com/car", params)
     .then((r) => {
     //   console.log(r.data);
       dispatch(getSucc(r.data));
@@ -45,7 +45,7 @@ const getCarId=({idd})=>(dispatch)=>{
   // console.log(idd,"pp")
   dispatch(getReqId())
   axios
-  .get(`http://localhost:8080/zoomcar/${idd}`)
+  .get(`https://enigmatic-stream-23835.herokuapp.com/car/${idd}`)
   .then((r) => {
     // console.log(r.data,"iddata")
   dispatch(getSuccId(r.data));

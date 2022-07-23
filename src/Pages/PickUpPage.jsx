@@ -6,7 +6,7 @@ import { TbCurrentLocation } from "react-icons/tb";
 import { GoLocation } from "react-icons/go";
 import { Link, useNavigate } from "react-router-dom";
 
-const PickUpPage = () => {
+const PickUpPage = ({ setPoint }) => {
   const navigate = useNavigate();
   const [te, setTe] = useState("");
 
@@ -20,6 +20,7 @@ const PickUpPage = () => {
   }, []);
 
   const handleAdd = () => {
+    setPoint(true);
     navigate("/");
   };
 

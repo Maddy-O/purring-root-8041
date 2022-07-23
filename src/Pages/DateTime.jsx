@@ -1,13 +1,13 @@
-import { Box, Container } from "@chakra-ui/react";
+import { Box, Button } from "@chakra-ui/react";
 import React, { useState } from "react";
-import { DateRange, DateRangePicker } from "react-date-range";
+import { DateRangePicker } from "react-date-range";
 import { addDays } from "date-fns";
-import { ThemeProvider } from "styled-components";
+import "react-date-range/dist/styles.css";
+import "react-date-range/dist/theme/default.css";
+import { useNavigate } from "react-router-dom";
 
-const DateTime = () => {
-  let handleSelect = (date) => {
-    console.log(date); // Momentjs object
-  };
+const DateTime = ({ setDateData }) => {
+  const navigate = useNavigate();
   const [state, setState] = useState([
     {
       startDate: new Date(),
@@ -15,22 +15,21 @@ const DateTime = () => {
       key: "selection",
     },
   ]);
+  let handleSelect = (date) => {
+    let startDate = String(date[0]?.startDate);
+    let endDate = String(date[0]?.endDate);
+    let bag1 = "";
+    let bag2 = "";
+    for (let i = 0; i < 16; i++) {
+      bag1 += startDate[i];
+      bag2 += endDate[i];
+    }
+    setDateData({ startDate: bag1, endDate: bag2 });
+    navigate("/");
+  };
+
   return (
-    <ThemeProvider
-      theme={{
-        breakpoints: ["32em", "48em", "64em"],
-        reactDatepicker: {
-          daySize: [36, 40],
-          fontFamily: "system-ui, -apple-system",
-          colors: {
-            accessibility: "#D80249",
-            selectedDay: "#f7518b",
-            selectedDayHover: "#F75D95",
-            primaryColor: "#d8366f",
-          },
-        },
-      }}
-    >
+    <Box height={"100vh"} backgroundColor="white" color={"black"}>
       <DateRangePicker
         onChange={(item) => setState([item.selection])}
         showSelectionPreview={true}
@@ -41,7 +40,10 @@ const DateTime = () => {
         preventSnapRefocus={true}
         calendarFocus="backwards"
       />
-    </ThemeProvider>
+      <Button backgroundColor="#e0e0e0" onClick={() => handleSelect(state)}>
+        Done
+      </Button>
+    </Box>
   );
 };
 
