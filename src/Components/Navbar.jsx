@@ -2,15 +2,12 @@ import React, { useEffect, useState } from "react";
 import {
   Box,
   Flex,
-  Avatar,
   Button,
   Menu,
   MenuButton,
   MenuList,
   MenuItem,
-  MenuDivider,
   useDisclosure,
-  Center,
   Drawer,
   DrawerBody,
   DrawerHeader,
@@ -36,9 +33,13 @@ export default function Navbar() {
 
   console.log(userName);
 
-  const handlesubmit = () => {
+  const handleLogout = () => {
     const loginobj = { name: "", email: "", phone: "", password: "" };
     localStorage.setItem("Logininfo", JSON.stringify(loginobj));
+    navigate("/Login", { replace: true });
+  };
+
+  const handleLogin = () => {
     navigate("/Login", { replace: true });
   };
 
@@ -158,26 +159,17 @@ export default function Navbar() {
                     {userName.name}
                   </Text>
                 ) : (
-                  <Text fontWeight={"600"} fontSize="20px">
+                  <Text fontWeight={"600"} fontSize="20px" color="white">
                     Login/SignUp
                   </Text>
                 )}
               </MenuButton>
               <MenuList alignItems={"center"}>
-                <br />
-                <Center>
-                  <Avatar
-                    size={"2xl"}
-                    src={"https://avatars.dicebear.com/api/male/username.svg"}
-                  />
-                </Center>
-                <br />
-                <Center>
-                  <p>Username</p>
-                </Center>
-                <br />
-                <MenuDivider />
-                <MenuItem onClick={handlesubmit}>Logout</MenuItem>
+                {userName.name ? (
+                  <MenuItem onClick={handleLogout}>Logout</MenuItem>
+                ) : (
+                  <MenuItem onClick={handleLogin}>Login</MenuItem>
+                )}
               </MenuList>
             </Menu>
           </Flex>

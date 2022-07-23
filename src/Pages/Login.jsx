@@ -1,7 +1,5 @@
 import React from "react";
-// import { GoogleLogin, GoogleLogout } from "react-google-login";
-// import { gapi } from "gapi-script";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   Image,
   Container,
@@ -11,42 +9,17 @@ import {
   InputLeftAddon,
   InputRightElement,
   Button,
-  Flex,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 
-const clientId =
-  "179149206343-n07ms4tjd5pgo0d64v9f8e89u6avnckr.apps.googleusercontent.com";
-
 const Login = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [show, setShow] = React.useState(false);
   const [password, setPassword] = React.useState("");
   const handleClick = () => setShow(!show);
 
   var LogArr = JSON.parse(localStorage.getItem("Logininfo"));
-  console.log("LogArr", LogArr);
-  const navigate = useNavigate();
-
-  // useEffect(() => {
-  //   function start() {
-  //     gapi.client.init({
-  //       clientId: clientId,
-  //       scope: "",
-  //     });
-  //   }
-  //   gapi.load("client:auth2", start);
-  // });
-
-  const onFailure = (res) => {
-    console.log("Login success! Current User", res.profileObj);
-  };
-  const onSuccess = (res) => {
-    console.log("Login Failed", res);
-  };
-  const onSuccesslogout = () => {
-    console.log("logout succesful");
-  };
 
   const handlesubmit = () => {
     if (LogArr.email === email && password === LogArr.password) {
@@ -111,6 +84,15 @@ const Login = () => {
         >
           Continue
         </Button>
+        <Heading
+          as="h5"
+          size="sm"
+          color="rgb(16,163,16)"
+          onClick={() => navigate("/signup")}
+          cursor="pointer"
+        >
+          Sign Up
+        </Heading>
       </Container>
     </div>
   );

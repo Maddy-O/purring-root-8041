@@ -116,8 +116,14 @@ const Signup = () => {
         >
           Continue
         </Button>
-        <Heading as="h5" size="sm" color="rgb(16,163,16)">
-          Continue with
+        <Heading
+          as="h5"
+          size="sm"
+          color="rgb(16,163,16)"
+          onClick={() => navigate("/login")}
+          cursor="pointer"
+        >
+          Log In
         </Heading>
       </Container>
     </div>
