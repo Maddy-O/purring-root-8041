@@ -48,6 +48,7 @@ const HeroBanner = () => {
             bg="white"
             width={{ base: "100px", md: "25%", lg: "15%" }}
             height="100%"
+            onClick={()=> window.scrollTo({top:4100,  behavior:"smooth"})}
           >
             <Text
               fontSize={{ base: "sm", md: "md" }}
@@ -97,6 +98,7 @@ const HeroBanner = () => {
               fontWeight="400"
               mt="8"
               width={{ base: "100%" }}
+              onClick={()=> window.scrollTo({top:4100,  behavior:"smooth"})}
             >
               Request Demo
             </Button>

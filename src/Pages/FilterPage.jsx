@@ -3,7 +3,7 @@ import { getCar, getCarId } from "../Redux/AppReducer/action";
 
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Box, Text, Heading, Button, Flex } from "@chakra-ui/react";
+import { Box, Text, Heading, Button, Flex, Image, Grid } from "@chakra-ui/react";
 import { StarIcon } from "@chakra-ui/icons";
 import { Navigate, useNavigate } from "react-router-dom";
 
@@ -73,18 +73,23 @@ export const FilterPage = () => {
     >
       <Box
         width={"27%"}
-        height={"100%"}
+        // height={"100%"}
         border={"1px solid none"}
         marginRight={"2%"}
         boxShadow={"rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"}
       >
-        <Box width={"100%"} height={"100px"} border={"1px solid none"}>
-          <Text fontSize={"20px"}>SEATS</Text>
+        <Box width={"100%"} >
+          <Text mb='2'  fontSize={{base:"sm ", md:"lg", lg:"xl"}}>SEATS</Text>
+          
+<Grid templateColumns={{base:'repeat(1, 1fr)', lg:'repeat(3, 1fr)'}}>
+
           <Button
             value={5}
             bg={"light-grey"}
             border={"1px solid grey"}
-            width={"30%"}
+            width={{base:"85%", lg:"90%"}}
+            mb='2'
+            ml='2'
             onClick={(e) => handleFilter(e)}
             cursor="pointer"
           >
@@ -94,7 +99,9 @@ export const FilterPage = () => {
             value={6}
             bg={"light-grey"}
             border={"1px solid grey"}
-            width={"30%"}
+            width={{base:"85%", lg:"90%"}}
+            mb='2'
+            ml='2'
             onClick={(e) => handleFilter(e)}
           >
             6
@@ -103,21 +110,28 @@ export const FilterPage = () => {
             value={7}
             bg={"light-grey"}
             border={"1px solid grey"}
-            width={"33%"}
+            width={{base:"85%", lg:"90%"}}
+            mb='2'
+            ml='2'
             onClick={(e) => handleFilter(e)}
           >
             7
           </Button>
+          </Grid>
+        
         </Box>
 
         {/* car Types */}
-        <Box width={"100%"} height={"100px"} border={"1px solid none"}>
-          <Text fontSize={"20px"}>CAR TYPES</Text>
+        <Box width={"100%"} border={"1px solid none"}>
+          <Text mb='2' mt='4'  fontSize={{base:"sm ", md:"lg", lg:"xl"}}>CAR TYPES</Text>
+          <Grid templateColumns={{base:'repeat(1, 1fr)', lg:'repeat(3, 1fr)'}}>
           <Button
             value={"SUV"}
             bg={"light-grey"}
             border={"1px solid grey"}
-            width={"30%"}
+            width={{base:"85%", lg:"90%"}}
+            mb='2'
+            ml='2'
             onClick={(e) => handleCarTypes(e)}
             cursor="pointer"
           >
@@ -127,7 +141,9 @@ export const FilterPage = () => {
             value={"sedan"}
             bg={"light-grey"}
             border={"1px solid grey"}
-            width={"30%"}
+            width={{base:"85%", lg:"90%"}}
+            mb='2'
+            ml='2'
             onClick={(e) => handleCarTypes(e)}
           >
             Sedan
@@ -136,21 +152,28 @@ export const FilterPage = () => {
             value={"hatchback"}
             bg={"light-grey"}
             border={"1px solid grey"}
-            width={"33%"}
+            width={{base:"85%", lg:"90%"}}
+            mb='2'
+            ml='2'
             onClick={(e) => handleCarTypes(e)}
           >
-            hatchback
+            Hatchback
           </Button>
+          </Grid>
+          
         </Box>
         {/* Transmission */}
 
-        <Box width={"100%"} height={"100px"} border={"1px solid none"}>
-          <Text fontSize={"20px"}>TRANSMISSION</Text>
+        <Box width={"100%"} border={"1px solid none"}>
+          <Text mb='2' mt='4'  fontSize={{base:"sm ", md:"lg", lg:"xl"}}>TRANSMISSION</Text>
+          <Grid templateColumns={{base:'repeat(1, 1fr)', lg:'repeat(2, 1fr)'}}>
           <Button
             value={"Manual"}
             bg={"light-grey"}
             border={"1px solid grey"}
-            width={"30%"}
+            width={{base:"85%", lg:"90%"}}
+            mb='2'
+            ml='2'
             onClick={(e) => handleTransmission(e)}
             cursor="pointer"
           >
@@ -160,20 +183,26 @@ export const FilterPage = () => {
             value={"Automatic"}
             bg={"light-grey"}
             border={"1px solid grey"}
-            width={"30%"}
+            width={{base:"85%", lg:"90%"}}
+            mb='2'
+            ml='2'
             onClick={(e) => handleTransmission(e)}
           >
             Automatic
           </Button>
+          </Grid>
         </Box>
         {/* Delivery div */}
         <Box width={"100%"} height={"100px"} border={"1px solid none"}>
-          <Text fontSize={"20px"}>DELIVERY TYPE</Text>
+          <Text mb='2' mt='4'  fontSize={{base:"sm ", md:"lg", lg:"xl"}}>DELIVERY TYPE</Text>
+          <Grid templateColumns={{base:'repeat(1, 1fr)', lg:'repeat(2, 1fr)'}}>
           <Button
             value={"Home Delivery"}
             bg={"light-grey"}
             border={"1px solid grey"}
-            width={"30%"}
+            width={{base:"85%", lg:"90%"}}
+            mb='2'
+            ml='2'
             onClick={(e) => handleDelivery(e)}
             cursor="pointer"
           >
@@ -183,16 +212,19 @@ export const FilterPage = () => {
             value={"Airport Delivery"}
             bg={"light-grey"}
             border={"1px solid grey"}
-            width={"30%"}
+            width={{base:"85%", lg:"90%"}}
+            mb='2'
+            ml='2'
             onClick={(e) => handleDelivery(e)}
           >
             Airport
           </Button>
+          </Grid>
         </Box>
       </Box>
 
       {/* MAIN DIV */}
-      <Box width={"68%"} height={"100%"} border={"1px solid transparent"}>
+      <Box width={{base:"95%", md:"90%", lg:"68%"}} height={"100%"} border={"1px solid transparent"}>
         {metaa.map((item) => {
           return (
             <Box
@@ -200,6 +232,7 @@ export const FilterPage = () => {
               height={"120px"}
               display={"flex"}
               padding={"0%"}
+              border='1px solid transparent'
               textAlign={"left"}
               lineHeight={"12px"}
               boxShadow={" rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;"}
@@ -208,17 +241,20 @@ export const FilterPage = () => {
             >
               {/* imagediv */}
               <Box
-                width={"33%"}
+                width={{base:"33%"}}
                 height={"120px"}
                 border={"1px solid transparent"}
                 marginRight={"0.5%"}
                 padding={"1%"}
               >
-                <img
+                <Image
                   src={item.image}
                   alt="nsbns"
-                  width={"70%"}
-                  height={"30%"}
+               
+                  objectFit='cover'
+                  width={{base:"100%", lg:"70%"}}
+               
+                  height={{base:"50%",md:"75%",  lg:"100%"}}
                 />
               </Box>
               {/* centernamediv */}
@@ -228,7 +264,7 @@ export const FilterPage = () => {
                 border={"1px solid transparent"}
                 marginRight={"1.4%"}
               >
-                <Text marginTop={"3%"}>{item.Name}</Text>
+                <Text mt='2' fontSize={{base:"sm", md:"lg", lg:"xl"}} fontWeight='500' lineHeight='1'>{item.Name}</Text>
                 <Text marginTop={"3%"} fontSize={"12px"}>
                   {item.Transmision} . {item.Type} . {item.Seat}seat
                 </Text>
@@ -245,17 +281,19 @@ export const FilterPage = () => {
                 textAlign={"center"}
                 marginRight={"1.4%"}
               >
-                <Heading>₹{item.Price}</Heading>
+                <Text fontSize={{base:"lg", md:"2xl", lg:"4xl"}} fontWeight='600' mt='2' >₹{item.Price}</Text>
                 <Button
                   value={`${item._id}`}
-                  height={"50%"}
-                  width={"50%"}
+                  height={{base:"30%",lg:"50%"}}
+               
+                  width={{base:"100%",lg:"50%"}}
                   borderRadius={"20px"}
-                  fontSize={"12px"}
+                  fontSize={{base:"md", md:"lg", lg:"xl"}}
                   border={"1px solid green"}
                   background={"transparent"}
-                  marginTop={"1%"}
+                  marginTop='8'
                   onClick={(e) => handelId(e)}
+                  _hover={{ background:'rgb(16,163,16)', color:"white" }}
                 >
                   Book Now
                 </Button>

@@ -1,10 +1,10 @@
-import { Box, Image, Text } from "@chakra-ui/react";
+import { Box, Image, Text, Container } from "@chakra-ui/react";
 import React from "react";
-// import FAQ from "../Components/FAQ";
-// import Growing from "../Components/Growing";
+import FAQ from "../Components/FAQ";
+import Growing from "../Components/Growing";
  import HostBanner from "../Components/HostBanner";
 import NavbarHost from "../Components/NavbarHost";
-// import Review from "../Components/Review";
+import Review from "../Components/Review";
 import Steps from "../Components/Steps";
 
 import Video from "../Components/Video";
@@ -25,7 +25,9 @@ const Hosts = () => {
 
 
       <Steps/>
-{/* 
+
+      <Growing/>
+
       <Box
         width="80%"
         height="300px"
@@ -60,11 +62,20 @@ const Hosts = () => {
             />
           </video>
         </Box>
-      </Box> */}
-      {/* <Growing/>
-      <Review /> */}
+      </Box>
+  
+      <Review />
 
-      {/* <FAQ />  */}
+      <FAQ /> 
+
+      <Container maxW="container.4xl" Content>
+          <Image
+            w="900px"
+            h="300px"
+            src="https://i.ibb.co/JR3QFhq/image-5-1.png"
+            alt="Dan Abramov"
+          />
+        </Container>
     </Box>
   );
 };
