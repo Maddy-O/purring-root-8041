@@ -26,35 +26,28 @@ const getFailId = () => {
   return { type: Types.GET_ID_FALIURE };
 };
 
-    
-
-
-
- const getCar = (params) => (dispatch) => {
-
+const getCar = (params) => (dispatch) => {
   dispatch(getReq());
   axios
     .get("https://enigmatic-stream-23835.herokuapp.com/car", params)
     .then((r) => {
-    //   console.log(r.data);
+        console.log(r.data);
       dispatch(getSucc(r.data));
     })
-    .catch((e) => dispatch(getFail(e)))
+    .catch((e) => dispatch(getFail(e)));
 };
-const getCarId=({idd})=>(dispatch)=>{
-  // console.log(idd,"pp")
-  dispatch(getReqId())
-  axios
-  .get(`https://enigmatic-stream-23835.herokuapp.com/car/${idd}`)
-  .then((r) => {
-    // console.log(r.data,"iddata")
-  dispatch(getSuccId(r.data));
-  })
-  .catch((e) => dispatch(getFail(e)));
-}
+const getCarId =
+  ({ idd }) =>
+  (dispatch) => {
+    // console.log(idd,"pp")
+    dispatch(getReqId());
+    axios
+      .get(`https://enigmatic-stream-23835.herokuapp.com/car/${idd}`)
+      .then((r) => {
+        // console.log(r.data,"iddata")
+        dispatch(getSuccId(r.data));
+      })
+      .catch((e) => dispatch(getFail(e)));
+  };
 
-
-
-
-
-export { getCar ,getCarId};
+export { getCar, getCarId };
