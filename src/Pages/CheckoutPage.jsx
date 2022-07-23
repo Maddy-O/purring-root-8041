@@ -47,7 +47,8 @@ export const CheckoutPage = () => {
           marginLeft={"0.8%"}
           marginTop={"0.5%"}
         >
-          <Image src={filterData.image} width={"100%"} height={"100%"}></Image>
+          <Image src={filterData.image} mt={{base:'0', lg:'-2'}}
+    objectFit='cover' width={{base:"100%",md:"80",lg:"60%"}} height={{base:"70%",md:"80%",lg:"100%"}} ></Image>
         </Box>
         {/* total div */}
       </Box>
