@@ -1,50 +1,37 @@
 import React, { useEffect } from "react";
 import { getCar, getCarId } from "../Redux/AppReducer/action";
-
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Box, Text, Heading, Button, Flex } from "@chakra-ui/react";
+import { Box, Text, Heading, Button } from "@chakra-ui/react";
 import { StarIcon } from "@chakra-ui/icons";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const FilterPage = () => {
   const data = useSelector((state) => state.AppReducer.car);
-  //  const filterdataa=useSelector((state)=>state.AppReducer.filterData)
-  //  console.log(filterdataa,"jjj")
-
   const [metaa, setMet] = useState([]);
   const [idd, setIdd] = useState(0);
   const dispatch = useDispatch();
-  // console.log(idd,"iddd");
   const navigate = useNavigate();
 
   const handleFilter = (e) => {
     const datatoset = data.filter((ele) => ele.Seat == e.target.value);
-
     setMet(datatoset);
   };
-
   const handleCarTypes = (e) => {
     const datatoset = data.filter((ele) => ele.CarType == e.target.value);
-    // console.log(datatoset)
     setMet(datatoset);
   };
-
   const handleTransmission = (e) => {
     const datatoset = data.filter((ele) => ele.Transmision == e.target.value);
-    // console.log(datatoset)
     setMet(datatoset);
   };
   const handleDelivery = (e) => {
     const datatoset = data.filter((ele) => ele.DeliveryType == e.target.value);
-    // console.log(datatoset)
     setMet(datatoset);
   };
-
   const handelId = (e) => {
     setIdd(e.target.value);
   };
-
   useEffect(() => {
     setMet(data);
   }, [setMet, data.length]);
@@ -60,7 +47,6 @@ export const FilterPage = () => {
       };
       dispatch(getCarId(payload));
       navigate("checkoutpage");
-      // <Navigate to="/checkoutpage" replace={true}/>
     }
   }, [dispatch, idd]);
 

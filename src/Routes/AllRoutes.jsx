@@ -12,6 +12,8 @@ import Signup from "../Pages/Signup";
 import Login from "../Pages/Login";
 import ReqAuth from "../Components/ReqAuth";
 import Navbar from "../Components/Navbar";
+import { Bank } from "../Payment/Bank";
+import { PaymentOptions } from "../Payment/PaymentOptions";
 
 const AllRoutes = () => {
   const [items, setitems] = useState("");
@@ -49,7 +51,6 @@ const AllRoutes = () => {
           path="/pickup"
           element={<PickUpPage setPoint={setPickupPoint} />}
         />
-
         <Route path="/filterpage" element={<FilterPage />} />
         <Route
           path="/filterpage/checkoutpage"
@@ -63,6 +64,8 @@ const AllRoutes = () => {
         <Route path="/hosts" element={<Hosts />} />
         <Route path="/login" element={<Login setIsAuth={setIsAuth} />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/payment_options" element={<PaymentOptions />} />
+        <Route path="/payment_options/bank" element={<Bank />} />
       </Routes>
     </>
   );
