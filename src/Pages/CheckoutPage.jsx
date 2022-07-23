@@ -74,7 +74,7 @@ export const CheckoutPage = () => {
             </Box>
             <Box display={"flex"} width={"100%"} marginTop={"1%"}>
              <StarIcon w={"6"} h={"8"} color={"gold"}></StarIcon>
-              <Text fontSize={"14px"} marginLeft={"2%"} marginTop={"2%"}>3.7 (6) . {filterData.Driven}</Text>
+              <Text fontSize={"14px"} marginLeft={"2%"} marginTop={"2%"}>{filterData.Star} (6) . {filterData.Driven}</Text>
             </Box>
             <Box  
             fontSize={["10px","12px"]} padding={"12px 40px 12px 16px"} marginTop={"16px"} color={"#5160C2"} bg={"#f0f4ff"}
