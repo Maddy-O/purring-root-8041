@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import homeBgImage from "../Assets/bg-desktop.png";
 import { FaCircle } from "react-icons/fa";
 import { VscCalendar } from "react-icons/vsc";
 import { BsArrowRight } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
-import { Box, Flex, Text, Button, Input } from "@chakra-ui/react";
+import { Box, Flex, Text, Button } from "@chakra-ui/react";
 
 const PickUpComponent = ({ point, dateData }) => {
   const navigate = useNavigate();
