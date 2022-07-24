@@ -80,7 +80,7 @@ export const CheckoutPage = () => {
             <Box  
             fontSize={["10px","12px"]} padding={"12px 40px 12px 16px"} marginTop={"16px"} color={"#5160C2"} bg={"#f0f4ff"}
              borderRadius={"4px"} marginTop={"4%"} width={"100%"}
-              height={[20,50,50]} border={"none"}>
+              border={"none"}>
               you will get a clean and sanitized car.Exact car location will be shared post-booking
             </Box>
             <Box marginTop={"1%"} width={"100%"} fontSize={"19px"}
