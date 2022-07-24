@@ -46,11 +46,11 @@ const Location = ({ setLocation }) => {
     } else {
       cit = currCity;
     }
-    // console.log(cou, cit);
     setSelectedCountry(cou);
     setSelectedCity(cit);
     dispatch(addUserLocation({ country: cou, city: cit }));
     setLocation(cit);
+
     navigate("/");
   };
 

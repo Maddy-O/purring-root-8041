@@ -6,8 +6,9 @@ import { Box, Text, Button, Image, Grid, Flex } from "@chakra-ui/react";
 import { StarIcon } from "@chakra-ui/icons";
 import { useNavigate } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
+import Navbar from "../Components/Navbar";
 
-export const FilterPage = () => {
+export const FilterPage = ({ isAuth, setIsAuth }) => {
   const data = useSelector((state) => state.AppReducer.car);
   const [metaa, setMet] = useState([]);
   const [idd, setIdd] = useState(0);
@@ -53,6 +54,7 @@ export const FilterPage = () => {
 
   return (
     <>
+      <Navbar isAuth={isAuth} setIsAuth={setIsAuth} />
       <Flex margin="10px" alignItems="center" gap="70px">
         <Box width="40%">
           <FaArrowLeft cursor="pointer" />

@@ -11,7 +11,6 @@ import Zms from "../Pages/Zms";
 import Signup from "../Pages/Signup";
 import Login from "../Pages/Login";
 import ReqAuth from "../Components/ReqAuth";
-import Navbar from "../Components/Navbar";
 import { Bank } from "../Payment/Bank";
 import { PaymentOptions } from "../Payment/PaymentOptions";
 
@@ -30,7 +29,6 @@ const AllRoutes = () => {
 
   return (
     <>
-      <Navbar setIsAuth={setIsAuth} isAuth={isAuth} />
       <Routes>
         <Route
           path="/"
@@ -39,6 +37,7 @@ const AllRoutes = () => {
               point={selectPickupPoint}
               dateData={dateData}
               setIsAuth={setIsAuth}
+              isAuth={isAuth}
             />
           }
         />
@@ -51,7 +50,10 @@ const AllRoutes = () => {
           path="/pickup"
           element={<PickUpPage setPoint={setPickupPoint} />}
         />
-        <Route path="/filterpage" element={<FilterPage />} />
+        <Route
+          path="/filterpage"
+          element={<FilterPage isAuth={isAuth} setIsAuth={setIsAuth} />}
+        />
         <Route
           path="/filterpage/checkoutpage"
           element={
