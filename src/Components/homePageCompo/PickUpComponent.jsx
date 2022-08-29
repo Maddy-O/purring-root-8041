@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import homeBgImage from "../../Assets/bg-desktop.png";
+import homeBgImage from "../../Assets/banner_roundtrip.png";
 import { FaCircle } from "react-icons/fa";
 import { VscCalendar } from "react-icons/vsc";
 import { BsArrowRight } from "react-icons/bs";
@@ -24,7 +24,7 @@ const PickUpComponent = () => {
       backgroundImage={homeBgImage}
       backgroundSize="cover"
       backgroundRepeat="no-repeat"
-      backgroundPosition="bottom right"
+      backgroundPosition="center"
       height="550"
       width="150"
       marginBottom={"50px"}

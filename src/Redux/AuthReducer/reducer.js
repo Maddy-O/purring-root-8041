@@ -46,7 +46,7 @@ const reducer = (state = initialState, action) => {
         isError: true,
       };
     //-----------------------LOGOUT------------------------------------
-    case types.LOGIN_USER_SUCCESS:
+    case types.LOGOUT_USER_SUCCESS:
       setLocalData("token", "");
       setLocalData("user", "");
       return {

@@ -28,6 +28,7 @@ import { FaUser, FaRegCopy, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { getLocalData, setLocalData } from "../localStorage";
 import { useSelector, useDispatch } from "react-redux";
+import { logoutUser } from "../../Redux/AuthReducer/action";
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -41,6 +42,7 @@ const Navbar = () => {
     setLocalData("token", "");
     setLocalData("userLocation", "");
     setLocalData("user", "");
+    dispatch(logoutUser());
     navigate("/login", { replace: true });
   };
 
@@ -232,7 +234,7 @@ const Navbar = () => {
             className="navBarRightSide"
           >
             <Text fontWeight={"600"} fontSize="18px">
-              <Link to="/hosts">Become a Host</Link>
+              <Link to="/host">Become a Host</Link>
             </Text>
             <Text fontWeight={"600"} fontSize="18px">
               <Link to="/zms">ZMS</Link>
@@ -371,7 +373,7 @@ const Navbar = () => {
               width="40%"
             >
               <Text fontWeight={"600"} fontSize="auto">
-                <Link to="/hosts">Become a Host</Link>
+                <Link to="/host">Become a Host</Link>
               </Text>
               <Text fontWeight={"600"} fontSize="auto">
                 <Link to="/zms">ZMS</Link>

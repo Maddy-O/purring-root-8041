@@ -3,7 +3,6 @@ import {
   Link as RouterLink,
   Box,
   Flex,
-  Text,
   Image,
   Container,
   Heading,

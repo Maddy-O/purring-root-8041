@@ -3,15 +3,11 @@ import {
   Flex,
   HStack,
   Link,
-  IconButton,
   Button,
   useDisclosure,
   useColorModeValue,
   Stack,
-  Image,
 } from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
-import Logo from "../../Assets/Zmslogowhite.png";
 import { useNavigate } from "react-router-dom";
 
 const Links = ["Contact Us", "FAQ's", "Refer & Earn", "Logout"];
@@ -39,48 +35,35 @@ export default function NavbarHost() {
   };
 
   return (
-    <Box bg="black" position="fixed" zIndex="1">
+    <Box bg="black" position="static" zIndex="1">
       <Box px={4} width="80%" margin="auto">
-        <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-          <IconButton
-            size={"md"}
-            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-            aria-label={"Open Menu"}
-            display={{ md: "none" }}
-            onClick={isOpen ? onClose : onOpen}
-          />
+        <Flex
+          alignItems="center"
+          h={10}
+          justifyContent="space-between"
+          paddingBottom="15px"
+          marginBottom={"10px"}
+        >
           <HStack
-            spacing={8}
-            alignItems={"center"}
+            as={"nav"}
+            spacing={4}
             color="white"
-            width={{ base: "25%", md: "15%", lg: "12%" }}
+            display={{ base: "none", md: "flex" }}
           >
-            <Box>
-              <Image src={Logo} />
-            </Box>
+            {Links.map((link) => (
+              <NavLink key={link}>{link}</NavLink>
+            ))}
           </HStack>
-          <Flex alignItems={"center"}>
-            <HStack
-              as={"nav"}
-              spacing={4}
-              color="white"
-              display={{ base: "none", md: "flex" }}
-            >
-              {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
-              ))}
-            </HStack>
-            <Button
-              variant={"solid"}
-              bg="rgb(16,163,16)"
-              color="white"
-              size={"sm"}
-              mr={4}
-              onClick={handleClick}
-            >
-              Start Earning
-            </Button>
-          </Flex>
+          <Button
+            variant={"solid"}
+            bg="rgb(16,163,16)"
+            color="white"
+            size={"sm"}
+            mr={4}
+            onClick={handleClick}
+          >
+            Start Earning
+          </Button>
         </Flex>
         {isOpen ? (
           <Box pb={4} display={{ md: "none" }}>
