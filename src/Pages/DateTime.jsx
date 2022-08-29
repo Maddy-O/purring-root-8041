@@ -6,7 +6,7 @@ import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import { useNavigate } from "react-router-dom";
 
-const DateTime = ({ setDateData }) => {
+const DateTime = () => {
   const navigate = useNavigate();
   const [state, setState] = useState([
     {
@@ -15,16 +15,19 @@ const DateTime = ({ setDateData }) => {
       key: "selection",
     },
   ]);
-  let handleSelect = (date) => {
-    let startDate = String(date[0]?.startDate);
-    let endDate = String(date[0]?.endDate);
-    let bag1 = "";
-    let bag2 = "";
+
+  const handleSelect = (date) => {
+    let startDate = String(state[0]?.startDate);
+    let endDate = String(state[0]?.endDate);
+    let stDate = "";
+    let edDate = "";
     for (let i = 0; i < 16; i++) {
-      bag1 += startDate[i];
-      bag2 += endDate[i];
+      stDate += startDate[i];
+      edDate += endDate[i];
     }
-    setDateData({ startDate: bag1, endDate: bag2 });
+    localStorage.setItem("firstDay", JSON.stringify(stDate));
+    localStorage.setItem("lastDay", JSON.stringify(edDate));
+
     navigate("/");
   };
 

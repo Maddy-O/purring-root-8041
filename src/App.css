@@ -4,9 +4,22 @@
   color: black;
 }
 
-@media only screen and (min-width:820px) {
-  .navBarRightSide {
+@media only screen and (max-width:400px) {}
+
+/* # Mobile */
+@media only screen and (max-width: 480px) {
+  .userMenuNavbar {
     display: none;
-    /* visibility: hidden; */
+  }
+
+  .zoomLogoNavbar {
+    display: none;
   }
 }
+
+
+/* # Tablet */
+@media only screen and (max-width: 768px) {}
+
+/* # Desktop */
+@media only screen and (max-width: 992px) {}

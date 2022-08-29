@@ -28,7 +28,6 @@ const reducer = (state = initState, action) => {
       return{
         ...state,
         filterData:action.payload
-
       }
     }
     default:

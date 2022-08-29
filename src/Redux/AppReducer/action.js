@@ -22,16 +22,11 @@ const getSuccId = (payload) => {
   return { type: Types.GET_ID_SUCESS, payload };
 };
 
-const getFailId = () => {
-  return { type: Types.GET_ID_FALIURE };
-};
-
 const getCar = (params) => (dispatch) => {
   dispatch(getReq());
   axios
-    .get("https://enigmatic-stream-23835.herokuapp.com/car", params)
+    .get("https://zoomcar-server.herokuapp.com/api/zoomcar", params)
     .then((r) => {
-        console.log(r.data);
       dispatch(getSucc(r.data));
     })
     .catch((e) => dispatch(getFail(e)));
@@ -39,12 +34,10 @@ const getCar = (params) => (dispatch) => {
 const getCarId =
   ({ idd }) =>
   (dispatch) => {
-    // console.log(idd,"pp")
     dispatch(getReqId());
     axios
-      .get(`https://enigmatic-stream-23835.herokuapp.com/car/${idd}`)
+      .get(`https://zoomcar-server.herokuapp.com/api/zoomcar/${idd}`)
       .then((r) => {
-        // console.log(r.data,"iddata")
         dispatch(getSuccId(r.data));
       })
       .catch((e) => dispatch(getFail(e)));

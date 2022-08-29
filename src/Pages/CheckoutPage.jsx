@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { ArrowBackIcon, StarIcon } from "@chakra-ui/icons";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
 
-export const CheckoutPage = () => {
+const CheckoutPage = () => {
   const navigate = useNavigate();
   const filterData = useSelector((state) => state.AppReducer.filterData);
 
@@ -12,7 +12,7 @@ export const CheckoutPage = () => {
     <Box width={"100%"} border={"1px solid none"} height="100vh">
       {/* first box */}
       <Box width={"100%"} height={"50px"} bg={"#f5f5f5"} textAlign={"left"}>
-        <RouterLink to="/filterpage">
+        <RouterLink to="/cars">
           <ArrowBackIcon w={30} h={45}></ArrowBackIcon>
         </RouterLink>
       </Box>
@@ -131,7 +131,7 @@ export const CheckoutPage = () => {
             height={"60px"}
             bg={"green"}
             color={"white"}
-            onClick={() => navigate("/payment_options")}
+            onClick={() => navigate("/payment")}
           >
             Checkout Summary
           </Button>
@@ -140,3 +140,5 @@ export const CheckoutPage = () => {
     </Box>
   );
 };
+
+export default CheckoutPage;

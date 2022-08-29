@@ -1,30 +1,50 @@
 import React, { useState, useEffect } from "react";
-import { Box, Button, Input, Flex, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import { FiArrowLeft } from "react-icons/fi";
 import { FaCircle, FaRegMap } from "react-icons/fa";
 import { TbCurrentLocation } from "react-icons/tb";
 import { GoLocation } from "react-icons/go";
 import { Link, useNavigate } from "react-router-dom";
+import { getLocalData, setLocalData } from "../Components/localStorage";
 
-const PickUpPage = ({ setPoint }) => {
+const PickUpPage = () => {
   const navigate = useNavigate();
-  const [te, setTe] = useState("");
+  const [pickUpPoint, setPickUpPoint] = useState("");
+  const [items, setItems] = useState("");
+  const [lat, setLate] = useState();
+  const [long, setLong] = useState();
+  const [currLoc, setCurrLoc] = useState();
+  const [msg, setMsg] = useState("");
 
-  const [items, setItems] = useState([]);
-
-  useEffect(() => {
-    const items = JSON.parse(localStorage.getItem("items"));
-    if (items) {
-      setItems(items);
+  const getLocation = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.watchPosition(showPosition);
+    } else {
+      setMsg("Geolocation is not supported by this browser.");
     }
-  }, []);
+    fetch(
+      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=2e08c3a4d2cbf4d0e36f28fb77ecdbd3`
+    )
+      .then((response) => response.json())
+      .then((resData) => {
+        setCurrLoc(resData.name);
+        setLocalData("userLocation", resData.name);
+      })
+      .catch((e) => console.log(e));
+  };
+
+  function showPosition(position) {
+    setLate(position.coords.latitude);
+    setLong(position.coords.longitude);
+  }
 
   const handleAdd = () => {
-    setPoint(true);
     navigate("/");
   };
 
-  console.log(items);
+  useEffect(() => {
+    setItems(getLocalData("userLocation"));
+  }, [currLoc]);
 
   return (
     <Box
@@ -63,8 +83,13 @@ const PickUpPage = ({ setPoint }) => {
             <FaCircle size={"10px"} color="green" />
             <Text color="gray">Pick Up City, Airpot, Address or Hotel</Text>
           </Box>
-          <Flex gap="10px" alignItems="center">
-            <TbCurrentLocation size="30px" color="gray" />
+          <Flex
+            gap="10px"
+            alignItems="center"
+            onClick={getLocation}
+            cursor="pointer"
+          >
+            <TbCurrentLocation size="30px" color="gray" cursor="poiter" />
             <Text>Current Location</Text>
           </Flex>
           <Flex gap="10px" alignItems="center">
@@ -78,7 +103,7 @@ const PickUpPage = ({ setPoint }) => {
           textAlign="left"
           padding="25px"
         >
-          {te ? (
+          {pickUpPoint ? (
             <Box width="50%">
               <Box backgroundColor="#f5f5f5" padding="5px">
                 <Text fontWeight={"bold"} color="gray.700">
@@ -87,7 +112,7 @@ const PickUpPage = ({ setPoint }) => {
               </Box>
               <Flex gap="10px" padding="5px" marginTop="10px">
                 <GoLocation size="20px" />
-                <Text>{te}</Text>
+                <Text>{pickUpPoint}</Text>
               </Flex>
             </Box>
           ) : (
@@ -107,7 +132,9 @@ const PickUpPage = ({ setPoint }) => {
               cursor="pointer"
             >
               <GoLocation size="20px" />
-              <Text onClick={() => setTe(`${items} International Airport`)}>
+              <Text
+                onClick={() => setPickUpPoint(`${items} International Airport`)}
+              >
                 {items} International Airport
               </Text>
             </Flex>
@@ -119,7 +146,7 @@ const PickUpPage = ({ setPoint }) => {
               cursor="pointer"
             >
               <GoLocation size="20px" />
-              <Text onClick={() => setTe(`${items} Raiway Station`)}>
+              <Text onClick={() => setPickUpPoint(`${items} Raiway Station`)}>
                 {items} Raiway Station
               </Text>
             </Flex>
@@ -131,17 +158,22 @@ const PickUpPage = ({ setPoint }) => {
               cursor="pointer"
             >
               <GoLocation size="20px" />
-              <Text onClick={() => setTe(`${items} City Bus Station`)}>
+              <Text onClick={() => setPickUpPoint(`${items} City Bus Station`)}>
                 {items} City Bus Station
               </Text>
             </Flex>
           </Box>
         </Flex>
+        {currLoc ? (
+          <Box marginBottom="25px">
+            <Button width="45%">{currLoc}</Button>
+          </Box>
+        ) : null}
         <Box>
           <Button
             onClick={handleAdd}
             width="45%"
-            backgroundColor={te ? "#10a310" : "#e0e0e0"}
+            backgroundColor={pickUpPoint ? "#10a310" : "#e0e0e0"}
           >
             CONFIRM PICKUP LOCATION
           </Button>

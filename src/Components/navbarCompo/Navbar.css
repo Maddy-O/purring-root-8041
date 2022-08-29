@@ -1,0 +1,17 @@
+/* # Mobile */
+@media only screen and (max-width: 480px) {
+    .userMenuNavbar {
+        display: none;
+    }
+
+    .zoomLogoNavbar {
+        display: none;
+    }
+}
+
+
+/* # Tablet */
+@media only screen and (max-width: 768px) {}
+
+/* # Desktop */
+@media only screen and (max-width: 992px) {}
