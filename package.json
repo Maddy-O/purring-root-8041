@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Maddy-O/purring-root-8041/issues"
   },
-  "homepage": "https://github.com/Maddy-O/purring-root-8041#readme"
+  "homepage": "https://github.com/Maddy-O/purring-root-8041#readme",
+  "dependencies": {
+    "axios": "^0.27.2"
+  }
 }
