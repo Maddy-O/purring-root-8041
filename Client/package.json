@@ -13,7 +13,7 @@
     "axios": "^0.27.2",
     "date-fns": "^2.29.2",
     "framer-motion": "^7.2.1",
-    "nth-check": ">=2.1.1",
+    "nth-check": "^2.1.1",
     "react": "^18.2.0",
     "react-date-range": "^1.4.0",
     "react-dom": "^18.2.0",
@@ -52,6 +52,6 @@
   },
   "devDependencies": {
     "react-scripts": "^5.0.1",
-    "nth-check": ">=2.1.1"
+    "nth-check": "^2.1.1"
   }
 }
