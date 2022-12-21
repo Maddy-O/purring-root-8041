@@ -78,7 +78,7 @@ after successfully authenticated from the backend
 1. npm i
 2. npm start to run react app
 3. pick up the location and confirm.
-4. Select the car to book is not registered first authenticate from the backend.
+4. Select the car to book if user is not registered first authenticate from the backend.
 5. Login and enter your Username and Password.
 6.SignUp enter all details name, email, password, and mobileno.
 6. Checkout.
