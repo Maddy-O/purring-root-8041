@@ -20,58 +20,69 @@ The following is the tech stack I used to build this website:-
 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a>
 <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"> <br>
 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="40" height="40"/> </a> <a href="https://nodejs.org" target="_blank" rel="noreferrer">
+ 
+ ## Home Page :
+This the Landing Page where user will land first pick city or location from Pick Up.......redirect Location Page.
+ ![Home_Page](https://github.com/swatibersurda/Dish-Polling-App/blob/main/syook/src/images/zoomhomepage.PNG?raw=true)
+ 
+ 
+ ## Location Page :
+ User need to select location confirm.....redirect home page.
+ ![Location_Page](https://github.com/swatibersurda/Dish-Polling-App/blob/main/syook/src/images/zoompickuppage.PNG?raw=true)
 
+ after Find Cars will redirect....carFilter Page.
 
+ 
+  ## Car Page :
+ ![Car_Page](https://github.com/swatibersurda/Dish-Polling-App/blob/main/syook/src/images/filter1.PNG?raw=true)
 
-
-## Login Page :
+## Filter options in car page 
+ car page has many Filter based on seats,car types etc....
+ ![Car_PageFilters](https://github.com/swatibersurda/Dish-Polling-App/blob/main/syook/src/images/filter2.PNG?raw=true) 
+ ![Car_PageFilters2](https://github.com/swatibersurda/Dish-Polling-App/blob/main/syook/src/images/filter1.PNG?raw=true)
+ 
+ after clicking on book now button will redirects to login page if user is not
+ registerd else will take to checkout page.
+ 
+ ## Login Page :
 The user will log in by entering his/her username and password.
 
-![Login_Page](https://github.com/swatibersurda/Dish-Polling-App/blob/main/syook/src/images/loginn.PNG?raw=true)
+![Login_Page](https://github.com/swatibersurda/Dish-Polling-App/blob/main/syook/src/images/loginzoom.PNG?raw=true)
+ ![Logedin_user](https://github.com/swatibersurda/Dish-Polling-App/blob/main/syook/src/images/logedinusername.PNG?raw=true)
+ 
 
-After Successfully Login redirected to Poll Page.............
+If user not registerd need go signup Page.............
 
-## Poll Page Section :
-I have added the Poll Page section to the navbar.
+ ## Signup Page :
+The user will log in by entering his/her name and password,email,mobileno.
 
-Left Section: The user can select the top 3 Dishes as per his choice from the provided choices and as per the selection he/she will get a ranking and submit the selection.
-Right Section: Displaying Dishes on the App which is fetched from the backend.
+![Signup_Page](https://github.com/swatibersurda/Dish-Polling-App/blob/main/syook/src/images/sigupzoom.PNG?raw=true)
+
+ 
+after sucessfully authenticated from backend
+ 
+ ## Checkout Page Section :
+![Checkout_Page](https://github.com/swatibersurda/Dish-Polling-App/blob/main/syook/src/images/checkoutpage.PNG?raw=true)
 
 
 
 
-![Poll_Page](https://github.com/swatibersurda/PollDishName_App/blob/main/syook/src/images/PollPage.PNG?raw=true)
-
-
-## Result Section :
-I have added the Poll Page section to the navbar.
-
-Left Section: The user can or can not  Edit the top 3 Dishes as per his choice from the provided choices.
-Right Section: Displaying rank of Dishes Polled by all users including the logged-in user.
-
-![Result_Page](https://github.com/swatibersurda/Dish-Polling-App/blob/main/syook/src/images/resullt.PNG?raw=true)
+## Payment Page Section :
+![Payment_Page](https://github.com/swatibersurda/Dish-Polling-App/blob/main/syook/src/images/paymentpage.PNG?raw=true)
 
 
 
 ## Usage :
 1. npm i
-2. npm i -g json server to start local db.json for Login as there is no Backend.
-3. npm start to run react app
-4. npm run server to run a local server.
-5. Login and enter your Username and Password.
-6. Poll Page selects the best three dishes as per your choice from the provided list of selections, if no choice is selected then will show an alert box 
-7. Result Page If the user wish can edit or can not edit, If the user wants to edit the section then can edit as well and can see the result of Final Polling on the right side.
+2. npm start to run react app
+3.pick up location and cofirm.
+4.Select car to book not registerd first authenticate from backend.
+5.Login and enter your Username and Password.
+6.SignUp enter all details name,email,passwod,mobileno.
+6.Checkout.
+7.Select Payment Option.
 
 
-
-
-
-
-
-
-
-## Responsive :
- The web-app is responsive as well.
 
 ## Contributors :
 1. [SWATI BERSURDA](https://github.com/swatibersurda)
@@ -83,7 +94,7 @@ Right Section: Displaying rank of Dishes Polled by all users including the logge
 
 
 ## Deploy Link :
-https://dish-poll-app-swati-bersurda.netlify.app/
+https://zoomcarclonemasai.netlify.app/
 
-## Clone Dish Polling App :
-  https://github.com/swatibersurda/Dish-Polling-App.git
+## Clone ZoomCar :
+ 
