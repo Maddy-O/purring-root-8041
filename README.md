@@ -27,7 +27,7 @@ This the Landing Page where user will land first pick city or location from Pick
  
  
  ## Location Page :
- User need to select location confirm.....redirect home page.
+ Users need to select location confirm.....redirect home page.
  ![Location_Page](https://github.com/swatibersurda/Dish-Polling-App/blob/main/syook/src/images/zoompickuppage.PNG?raw=true)
 
  after Find Cars will redirect....carFilter Page.
@@ -41,25 +41,25 @@ This the Landing Page where user will land first pick city or location from Pick
  ![Car_PageFilters](https://github.com/swatibersurda/Dish-Polling-App/blob/main/syook/src/images/filter2.PNG?raw=true) 
  ![Car_PageFilters2](https://github.com/swatibersurda/Dish-Polling-App/blob/main/syook/src/images/filter1.PNG?raw=true)
  
- after clicking on book now button will redirects to login page if user is not
+ after clicking on Book Now button will redirects to login page if user is not
  registerd else will take to checkout page.
  
  ## Login Page :
-The user will log in by entering his/her username and password.
+The user will login by entering his/her username and password.
 
 ![Login_Page](https://github.com/swatibersurda/Dish-Polling-App/blob/main/syook/src/images/loginzoom.PNG?raw=true)
  ![Logedin_user](https://github.com/swatibersurda/Dish-Polling-App/blob/main/syook/src/images/logedinusername.PNG?raw=true)
  
 
-If user not registerd need go signup Page.............
+If the user not registered need go signup Page.............
 
  ## Signup Page :
-The user will log in by entering his/her name and password,email,mobileno.
+The user will log in by entering his/her name and password, email, mobile no.
 
 ![Signup_Page](https://github.com/swatibersurda/Dish-Polling-App/blob/main/syook/src/images/sigupzoom.PNG?raw=true)
 
  
-after sucessfully authenticated from backend
+after successfully authenticated from the backend
  
  ## Checkout Page Section :
 ![Checkout_Page](https://github.com/swatibersurda/Dish-Polling-App/blob/main/syook/src/images/checkoutpage.PNG?raw=true)
@@ -75,13 +75,12 @@ after sucessfully authenticated from backend
 ## Usage :
 1. npm i
 2. npm start to run react app
-3.pick up location and cofirm.
-4.Select car to book not registerd first authenticate from backend.
-5.Login and enter your Username and Password.
-6.SignUp enter all details name,email,passwod,mobileno.
-6.Checkout.
-7.Select Payment Option.
-
+3. pick up the location and confirm.
+4. Select the car to book is not registered first authenticate from the backend.
+5. Login and enter your Username and Password.
+6.SignUp enter all details name, email, password, and mobileno.
+6. Checkout.
+7. Select Payment Option.
 
 
 ## Contributors :
