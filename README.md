@@ -1,4 +1,4 @@
-# ZoomCar Clone
+# Zoomcar Clone
 Zoomcar is an Indian car sharing platform or Website.
 
 ## Tech Stack :
@@ -84,7 +84,11 @@ after successfully authenticated from the backend
 
 
 ## Contributors :
-1. [SWATI BERSURDA](https://github.com/swatibersurda)
+1. [Swati Bersurda](https://github.com/swatibersurda)
+2. [Parth Deshmukh](https://github.com/parthdeshmukh2)
+3. [Madan Mohan](https://github.com/Maddy-O)
+4. [Sambit Kumar](https://github.com/sambitkumar10)
+5. [Prakash](https://github.com/PRAKASH-1971)
 
 
 
@@ -96,4 +100,4 @@ after successfully authenticated from the backend
 https://zoomcarclonemasai.netlify.app/
 
 ## Clone ZoomCar :
- 
+https://github.com/Maddy-O/purring-root-8041.git
