@@ -47,8 +47,10 @@ This the Landing Page where user will land first pick city or location from Pick
  ## Login Page :
 The user will login by entering his/her username and password.
 
-![Login_Page](https://github.com/swatibersurda/Dish-Polling-App/blob/main/syook/src/images/loginzoom.PNG?raw=true)
- ![Logedin_user](https://github.com/swatibersurda/Dish-Polling-App/blob/main/syook/src/images/logedinusername.PNG?raw=true)
+![Login_Page](https://github.com/swatibersurda/Dish-Polling-App/blob/main/syook/src/images/loginzoom.PNG?raw=true)<br>
+ 
+ ## Logged in view......
+![Logedin_user](https://github.com/swatibersurda/Dish-Polling-App/blob/main/syook/src/images/logedinusername.PNG?raw=true)
  
 
 If the user not registered need go signup Page.............
